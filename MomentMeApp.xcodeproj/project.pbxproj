@@ -56,6 +56,12 @@
 		34955DBD27D312A2003FB7AD /* MomentMeApp */ = {
 			isa = PBXGroup;
 			children = (
+				34955DD727D31775003FB7AD /* API */,
+				34955DD627D31767003FB7AD /* Utils */,
+				34955DD527D3175F003FB7AD /* Controller */,
+				34955DD427D31757003FB7AD /* ViewModel */,
+				34955DD327D31753003FB7AD /* View */,
+				34955DD227D3172C003FB7AD /* Model */,
 				34955DBE27D312A2003FB7AD /* AppDelegate.swift */,
 				34955DC027D312A2003FB7AD /* SceneDelegate.swift */,
 				34955DC227D312A2003FB7AD /* ViewController.swift */,
@@ -65,6 +71,48 @@
 				34955DCC27D312A3003FB7AD /* Info.plist */,
 			);
 			path = MomentMeApp;
+			sourceTree = "<group>";
+		};
+		34955DD227D3172C003FB7AD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		34955DD327D31753003FB7AD /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		34955DD427D31757003FB7AD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		34955DD527D3175F003FB7AD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		34955DD627D31767003FB7AD /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		34955DD727D31775003FB7AD /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
