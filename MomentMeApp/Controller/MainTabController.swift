@@ -31,6 +31,13 @@ class MainTabController: UITabBarController{
         viewControllers = [feed, search, imageSelctor, notifications, profile]
     }
     
+    
+    func templeteNavigaitonController(unselectedImage:UIImage, selectedImage: UIImage, rootViewController: UIViewController)->UINavigationController{
+        
+        
+    }
+    
+    
 }
 
 
