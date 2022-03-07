@@ -19,6 +19,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
         window?.rootViewController = MainTabController()
+        
+        //fixing transparent bar
+        
+        if #available(iOS 15.0, *){
+            let appearanceTabBar = UITabBarAppearance()
+            let appearanceNavBar = UINavigationBarAppearance()
+            UITabBar.appearance().scrollEdgeAppearance = appearanceTabBar
+        }
+        
+        
         window?.makeKeyAndVisible()
     }
 
