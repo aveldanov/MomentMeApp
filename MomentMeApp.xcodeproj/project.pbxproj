@@ -19,6 +19,7 @@
 		34955DDF27D54D90003FB7AD /* ImageSelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34955DDE27D54D90003FB7AD /* ImageSelectorController.swift */; };
 		34955DE127D54DA6003FB7AD /* NotificationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34955DE027D54DA6003FB7AD /* NotificationsController.swift */; };
 		34955DE327D54DB4003FB7AD /* ProfilerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34955DE227D54DB4003FB7AD /* ProfilerController.swift */; };
+		34955DE527D5C9F1003FB7AD /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34955DE427D5C9F1003FB7AD /* FeedCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		34955DDE27D54D90003FB7AD /* ImageSelectorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectorController.swift; sourceTree = "<group>"; };
 		34955DE027D54DA6003FB7AD /* NotificationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsController.swift; sourceTree = "<group>"; };
 		34955DE227D54DB4003FB7AD /* ProfilerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilerController.swift; sourceTree = "<group>"; };
+		34955DE427D5C9F1003FB7AD /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 		34955DD327D31753003FB7AD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				34955DE427D5C9F1003FB7AD /* FeedCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				34955DC327D312A2003FB7AD /* ViewController.swift in Sources */,
+				34955DE527D5C9F1003FB7AD /* FeedCell.swift in Sources */,
 				34955DDF27D54D90003FB7AD /* ImageSelectorController.swift in Sources */,
 				34955DE127D54DA6003FB7AD /* NotificationsController.swift in Sources */,
 				34955DDD27D54D80003FB7AD /* SearchController.swift in Sources */,
