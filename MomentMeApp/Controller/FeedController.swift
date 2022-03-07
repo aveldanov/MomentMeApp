@@ -9,9 +9,6 @@ import UIKit
 
 
 class FeedController: UICollectionViewController{
-    // to delete once cell is set
-    let identifier = "cell"
-    
     
 // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -24,7 +21,7 @@ class FeedController: UICollectionViewController{
     
     func configureUI(){
         collectionView.backgroundColor = .white
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: identifier)
+        collectionView.register(FeedCell.self, forCellWithReuseIdentifier: FeedCell.identifier)
     }
     
 }
@@ -37,8 +34,7 @@ extension FeedController{
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath)
-        cell.backgroundColor = .red
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FeedCell.identifier, for: indexPath) as! FeedCell
         return cell
     }
     

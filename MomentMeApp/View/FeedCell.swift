@@ -11,14 +11,14 @@ import UIKit
 class FeedCell: UICollectionViewCell{
     
     // MARK: - Properties
-    
+    static let identifier = "FeedCell"
     
     // MARK: - Lifecycle
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        
+        backgroundColor = .systemPurple
     }
     
     required init?(coder: NSCoder) {

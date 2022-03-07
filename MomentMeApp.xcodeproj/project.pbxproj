@@ -20,6 +20,7 @@
 		34955DE127D54DA6003FB7AD /* NotificationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34955DE027D54DA6003FB7AD /* NotificationsController.swift */; };
 		34955DE327D54DB4003FB7AD /* ProfilerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34955DE227D54DB4003FB7AD /* ProfilerController.swift */; };
 		34955DE527D5C9F1003FB7AD /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34955DE427D5C9F1003FB7AD /* FeedCell.swift */; };
+		34955DE727D5CFDB003FB7AD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34955DE627D5CFDB003FB7AD /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		34955DE027D54DA6003FB7AD /* NotificationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsController.swift; sourceTree = "<group>"; };
 		34955DE227D54DB4003FB7AD /* ProfilerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilerController.swift; sourceTree = "<group>"; };
 		34955DE427D5C9F1003FB7AD /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		34955DE627D5CFDB003FB7AD /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 		34955DD627D31767003FB7AD /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				34955DE627D5CFDB003FB7AD /* Extensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 				34955DE327D54DB4003FB7AD /* ProfilerController.swift in Sources */,
 				34955DDB27D54D75003FB7AD /* FeedController.swift in Sources */,
 				34955DD927D317C8003FB7AD /* MainTabController.swift in Sources */,
+				34955DE727D5CFDB003FB7AD /* Extensions.swift in Sources */,
 				34955DC127D312A2003FB7AD /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
