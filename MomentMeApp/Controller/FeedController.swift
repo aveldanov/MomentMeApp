@@ -23,7 +23,6 @@ class FeedController: UICollectionViewController{
         collectionView.backgroundColor = .white
         collectionView.register(FeedCell.self, forCellWithReuseIdentifier: FeedCell.identifier)
     }
-    
 }
 
 // MARK: - CollectionView DataSource
