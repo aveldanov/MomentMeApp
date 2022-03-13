@@ -60,10 +60,22 @@ class LoginController: UIViewController{
         let button = UIButton(type: .system)
         let atts: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor(white: 1, alpha: 0.7), .font: UIFont.systemFont(ofSize: 16)]
         
-        let attributedTitle = NSMutableAttributedString(string: "Don't have an account?  ", attributes: atts)
+        let attributedTitle = NSMutableAttributedString(string: "Don't have an account? ", attributes: atts)
         
         let boldAtts: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor(white: 1, alpha: 0.7), .font: UIFont.boldSystemFont(ofSize: 16)]
         attributedTitle.append(NSAttributedString(string: "Sign Up", attributes: boldAtts))
+        button.setAttributedTitle(attributedTitle, for: .normal)
+        return button
+    }()
+    
+    private let forgotPasswordButton: UIButton = {
+        let button = UIButton(type: .system)
+        let atts: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor(white: 1, alpha: 0.7), .font: UIFont.systemFont(ofSize: 16)]
+        
+        let attributedTitle = NSMutableAttributedString(string: "Forgot your password? ", attributes: atts)
+        
+        let boldAtts: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor(white: 1, alpha: 0.7), .font: UIFont.boldSystemFont(ofSize: 16)]
+        attributedTitle.append(NSAttributedString(string: "Get help signing in", attributes: boldAtts))
         button.setAttributedTitle(attributedTitle, for: .normal)
         return button
     }()
@@ -97,7 +109,7 @@ class LoginController: UIViewController{
         iconImage.setDimensions(height: 80, width: 120)
         iconImage.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 32)
         
-        let stack = UIStackView(arrangedSubviews: [emailTextField, passwordTextField, loginButton])
+        let stack = UIStackView(arrangedSubviews: [emailTextField, passwordTextField, loginButton, forgotPasswordButton])
         stack.axis = .vertical
         stack.spacing = 20
         
