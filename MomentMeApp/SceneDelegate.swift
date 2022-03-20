@@ -20,7 +20,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: scene)
 //        window?.rootViewController = MainTabController()
          window?.rootViewController = UINavigationController(rootViewController: LoginController())
-        
 
         //fixing transparent bar
         

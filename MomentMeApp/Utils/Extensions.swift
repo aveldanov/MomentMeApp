@@ -8,6 +8,14 @@
 
 import UIKit
 
+extension UIViewController{
+    
+    func configureGradientLayer(){
+        
+    }
+}
+
+
 
 extension UIView {
     func anchor(top: NSLayoutYAxisAnchor? = nil,
