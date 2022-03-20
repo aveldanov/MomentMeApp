@@ -15,7 +15,7 @@ class RegistrationController: UIViewController{
     private let plusPhotoButton: UIButton = {
         let button = UIButton()
         button.setImage(#imageLiteral(resourceName: "plus_photo") , for: .normal)
-        button.tintColor = .white
+        button.tintColor = .red
         return button
     }()
     
