@@ -8,7 +8,7 @@
 import UIKit
 
 
-class CustomTextField: UITextField{
+class CustomAuthTextField: UITextField{
     
     init(placeholder: String) {
         super.init(frame: .zero) // no frame, will create when called

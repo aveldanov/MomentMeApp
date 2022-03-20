@@ -20,25 +20,19 @@ class LoginController: UIViewController{
     }()
     
     private let emailTextField: UITextField = {
-        let textField = CustomTextField(placeholder: "Email")
+        let textField = CustomAuthTextField(placeholder: "Email")
         return textField
     }()
     
     private let passwordTextField: UITextField = {
-        let textField = CustomTextField(placeholder: "Password")
+        let textField = CustomAuthTextField(placeholder: "Password")
         textField.isSecureTextEntry = true
         return textField
     }()
     
     
     private let loginButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("Login", for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = #colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)
-        button.layer.cornerRadius = 5
-        button.setHeight(50)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        let button = CustomAuthButton(placeholder: "Login", buttonType: .system)
         return button
     }()
     
