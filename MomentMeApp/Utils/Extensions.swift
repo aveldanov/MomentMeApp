@@ -12,6 +12,12 @@ extension UIViewController{
     
     func configureGradientLayer(){
         
+        let gradient = CAGradientLayer()
+        gradient.colors = [UIColor.systemTeal.cgColor, UIColor.systemBlue.cgColor]
+        gradient.locations = [0,1]
+        view.layer.addSublayer(gradient)
+        gradient.frame = view.frame
+        
     }
 }
 
