@@ -25,6 +25,7 @@
 		34955DE527D5C9F1003FB7AD /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34955DE427D5C9F1003FB7AD /* FeedCell.swift */; };
 		34955DE727D5CFDB003FB7AD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34955DE627D5CFDB003FB7AD /* Extensions.swift */; };
 		34F79B2D27E6BE3800B55017 /* CustomAuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F79B2C27E6BE3800B55017 /* CustomAuthButton.swift */; };
+		34F79B2F27E6CC4A00B55017 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F79B2E27E6CC4A00B55017 /* AuthenticationViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		34955DE427D5C9F1003FB7AD /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		34955DE627D5CFDB003FB7AD /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		34F79B2C27E6BE3800B55017 /* CustomAuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAuthButton.swift; sourceTree = "<group>"; };
+		34F79B2E27E6CC4A00B55017 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 		34955DD427D31757003FB7AD /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				34F79B2E27E6CC4A00B55017 /* AuthenticationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 				34F79B2D27E6BE3800B55017 /* CustomAuthButton.swift in Sources */,
 				34955DC327D312A2003FB7AD /* ViewController.swift in Sources */,
 				3440D37727DC4A74005C7169 /* LoginController.swift in Sources */,
+				34F79B2F27E6CC4A00B55017 /* AuthenticationViewModel.swift in Sources */,
 				34955DE527D5C9F1003FB7AD /* FeedCell.swift in Sources */,
 				34955DDF27D54D90003FB7AD /* ImageSelectorController.swift in Sources */,
 				34955DE127D54DA6003FB7AD /* NotificationsController.swift in Sources */,

@@ -80,7 +80,5 @@ class RegistrationController: UIViewController{
         view.addSubview(alreadyHaveAccountButton)
         alreadyHaveAccountButton.centerX(inView: view)
         alreadyHaveAccountButton.anchor(bottom: view.safeAreaLayoutGuide.bottomAnchor)
-        
     }
-    
 }
