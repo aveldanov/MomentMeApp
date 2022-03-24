@@ -12,7 +12,7 @@ class LoginController: UIViewController{
     
     // MARK: - Properties
     
-    private let viewModel = LoginViewModel()
+    private var viewModel = LoginViewModel()
     
     
     private let iconImage: UIImageView = {
@@ -59,12 +59,24 @@ class LoginController: UIViewController{
         super.viewDidLoad()
         
         configureUI()
+        configureNotificationObservers()
     }
     
     // MARK: - Actions
     @objc private func handleShowSignUp(){
         let controller = RegistrationController()
         navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    
+    @objc func textDidChange(sender: UITextField){
+        if sender == emailTextField{
+            viewModel.email = sender.text
+        }else{
+            viewModel.password = sender.text
+        }
+        
+        print("[LoginController] ViewModel email \(viewModel.email) and password \(viewModel.password)")
     }
     
     
