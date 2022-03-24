@@ -12,8 +12,11 @@ struct LoginViewModel{
     let email: String?
     let password: String?
     
-    
+    var formIsValid: Bool{
+        return email?.isEmpty == false && password?.isEmpty == false
+    }
 }
+
 
 struct RegistrationViewModel{
     

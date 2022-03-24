@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 class CustomAuthTextField: UITextField{
     
     init(placeholder: String) {
