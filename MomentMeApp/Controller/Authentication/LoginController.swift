@@ -12,6 +12,9 @@ class LoginController: UIViewController{
     
     // MARK: - Properties
     
+    private let viewModel = LoginViewModel()
+    
+    
     private let iconImage: UIImageView = {
         let imageView = UIImageView(image: #imageLiteral(resourceName: "MomentMe"))
         imageView.contentMode = .scaleAspectFill
@@ -90,6 +93,12 @@ class LoginController: UIViewController{
         view.addSubview(dontHaveAccountButton)
         dontHaveAccountButton.centerX(inView: view)
         dontHaveAccountButton.anchor(bottom: view.safeAreaLayoutGuide.bottomAnchor)
+    }
+    
+    
+    func configureNotificationObservers(){
+        emailTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
     }
     
 }
