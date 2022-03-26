@@ -21,6 +21,15 @@ struct ImageUploader{
             if let error = error{
                 print("[ImageUploader] error",error.localizedDescription)
             }
+            
+            ref.downloadURL { url, error in
+                guard let imageURL = url?.absoluteString else{
+                    return
+                }
+                
+                completeion(imageURL)
+            }
+            
         }
     }
     
