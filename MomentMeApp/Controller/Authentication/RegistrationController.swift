@@ -17,6 +17,7 @@ class RegistrationController: UIViewController{
     private let plusPhotoButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(#imageLiteral(resourceName: "plus_photo") , for: .normal)
+        button.addTarget(self, action: #selector(handleProfilePhotoSelect), for: .touchUpInside)
         button.tintColor = .white
         return button
     }()
@@ -75,6 +76,10 @@ class RegistrationController: UIViewController{
         updateForm()
     }
     
+    
+    @objc func handleProfilePhotoSelect(){
+        print("handleProfilePhotoSelect")
+    }
     
     // MARK: - Helpers
     
