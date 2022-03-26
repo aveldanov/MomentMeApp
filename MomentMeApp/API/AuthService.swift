@@ -21,9 +21,27 @@ struct AuthCredentials{
 
 struct AuthService{
     
-    static func registerUser(withCredentials credentials: AuthCredentials){
+    static func registerUser(withCredentials credentials: AuthCredentials, completion: @escaping (Error?)->Void){
         
-        print(credentials)
+        ImageUploader.uploadImage(image: credentials.profileImage) { imageURLString in
+            Auth.auth().createUser(withEmail: credentials.email, password: credentials.password) { authResult, error in
+                if let error = error {
+                    print("[AuthService] Error \(error.localizedDescription)")
+                    return
+                }
+                
+                guard let uid = authResult?.user.uid else {
+                    return
+                }
+                
+                let data: [String: Any] = ["email": credentials.email,
+                                            "fullname": credentials.fullname,
+                                            "profileImageURL": imageURLString,
+                                            "uid": uid,
+                                            "username": credentials.username]
+                
+            }
+        }
         
     }
     
