@@ -67,12 +67,10 @@ class RegistrationController: UIViewController{
         }else if sender == passwordTextField{
             viewModel.password = sender.text
         }else if sender == fullnameTextField{
-            
+            viewModel.fullname = sender.text
         }else if sender == usernameTextField{
-            
+            viewModel.username = sender.text
         }
-        
-
     }
     
     
