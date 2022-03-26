@@ -115,7 +115,12 @@ class RegistrationController: UIViewController{
                                           username: username,
                                           profileImage: profileImage)
 
-        AuthService.registerUser(withCredentials: credentials)
+        AuthService.registerUser(withCredentials: credentials) { error in
+            if let error = error {
+                print("[RegistrationController] error \(error.localizedDescription)")
+                return
+            }
+        }
     }
     
     // MARK: - Helpers
