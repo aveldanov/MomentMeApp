@@ -1,0 +1,6 @@
+framework module Pods_MomentMeApp {
+  umbrella header "Pods-MomentMeApp-umbrella.h"
+
+  export *
+  module * { export * }
+}
