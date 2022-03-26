@@ -14,7 +14,6 @@ class LoginController: UIViewController{
     
     private var viewModel = LoginViewModel()
     
-    
     private let iconImage: UIImageView = {
         let imageView = UIImageView(image: #imageLiteral(resourceName: "MomentMe"))
         imageView.contentMode = .scaleAspectFill
