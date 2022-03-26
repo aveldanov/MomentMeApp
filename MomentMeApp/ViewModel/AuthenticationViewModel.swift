@@ -8,6 +8,12 @@
 import Foundation
 import UIKit
 
+
+protocol FormViewModelProtocol{
+    func updateForm()
+}
+
+
 protocol AuthenticationViewModelProtocol{
     var formIsValid: Bool {get}
     var buttonBackgroundColor: UIColor {get}

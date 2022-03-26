@@ -12,6 +12,8 @@ class RegistrationController: UIViewController{
     
     // MARK: - Properties
     
+    private var viewModel = RegistrationViewModel()
+    
     private let plusPhotoButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(#imageLiteral(resourceName: "plus_photo") , for: .normal)
@@ -30,9 +32,9 @@ class RegistrationController: UIViewController{
         return textField
     }()
     
-    private let fullNameTextField: UITextField = CustomAuthTextField(placeholder: "Fullname")
+    private let fullnameTextField: UITextField = CustomAuthTextField(placeholder: "Fullname")
     
-    private let userNameTextField: UITextField = CustomAuthTextField(placeholder: "Username")
+    private let usernameTextField: UITextField = CustomAuthTextField(placeholder: "Username")
     
     private let signupButton: UIButton = {
         let button = CustomAuthButton(placeholder: "Sign Up", buttonType: .system)
@@ -59,6 +61,20 @@ class RegistrationController: UIViewController{
         navigationController?.popViewController(animated: true)
     }
     
+    @objc func textDidChange(sender: UITextField){
+        if sender == emailTextField{
+            viewModel.email = sender.text
+        }else if sender == passwordTextField{
+            viewModel.password = sender.text
+        }else if sender == fullnameTextField{
+            
+        }else if sender == usernameTextField{
+            
+        }
+        
+
+    }
+    
     
     // MARK: - Helpers
     
@@ -70,7 +86,7 @@ class RegistrationController: UIViewController{
         plusPhotoButton.setDimensions(height: 140, width: 140)
         plusPhotoButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 32)
         
-        let stack = UIStackView(arrangedSubviews: [emailTextField, passwordTextField, fullNameTextField, userNameTextField, signupButton])
+        let stack = UIStackView(arrangedSubviews: [emailTextField, passwordTextField, fullnameTextField, usernameTextField, signupButton])
         stack.axis = .vertical
         stack.spacing = 20
         
@@ -81,4 +97,13 @@ class RegistrationController: UIViewController{
         alreadyHaveAccountButton.centerX(inView: view)
         alreadyHaveAccountButton.anchor(bottom: view.safeAreaLayoutGuide.bottomAnchor)
     }
+    
+    
+    func configureNotificationObservers(){
+        emailTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        fullnameTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        usernameTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+    }
+    
 }
