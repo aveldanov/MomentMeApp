@@ -92,16 +92,16 @@ class RegistrationController: UIViewController{
     
     
     @objc func handleSignup(){
-        guard let email = emailTextField.text else{
+        guard let email = emailTextField.text?.lowercased() else{
             return
         }
-        guard let password = passwordTextField.text else{
+        guard let password = passwordTextField.text?.lowercased() else{
             return
         }
-        guard let fullname = fullnameTextField.text else{
+        guard let fullname = fullnameTextField.text?.lowercased() else{
             return
         }
-        guard let username = usernameTextField.text else{
+        guard let username = usernameTextField.text?.lowercased() else{
             return
         }
         
@@ -120,6 +120,8 @@ class RegistrationController: UIViewController{
                 print("[RegistrationController] error \(error.localizedDescription)")
                 return
             }
+            print("[RegistrationController] Success Regisered User)")
+            
         }
     }
     
