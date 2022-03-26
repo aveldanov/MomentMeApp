@@ -53,6 +53,7 @@ class RegistrationController: UIViewController{
         super.viewDidLoad()
         
         configureUI()
+        configureNotificationObservers()
     }
     
     // MARK: - Actions
@@ -71,6 +72,7 @@ class RegistrationController: UIViewController{
         }else if sender == usernameTextField{
             viewModel.username = sender.text
         }
+        updateForm()
     }
     
     
@@ -104,4 +106,15 @@ class RegistrationController: UIViewController{
         usernameTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
     }
     
+}
+
+
+// MARK: - FormViewModel
+
+extension RegistrationController: FormViewModelProtocol{
+    func updateForm() {
+        signupButton.backgroundColor = viewModel.buttonBackgroundColor
+        signupButton.setTitleColor(viewModel.buttonTitleColor, for: .normal)
+        signupButton.isEnabled = viewModel.formIsValid
+    }
 }
