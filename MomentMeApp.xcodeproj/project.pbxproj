@@ -26,7 +26,7 @@
 		34955DDD27D54D80003FB7AD /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34955DDC27D54D80003FB7AD /* SearchController.swift */; };
 		34955DDF27D54D90003FB7AD /* ImageSelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34955DDE27D54D90003FB7AD /* ImageSelectorController.swift */; };
 		34955DE127D54DA6003FB7AD /* NotificationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34955DE027D54DA6003FB7AD /* NotificationsController.swift */; };
-		34955DE327D54DB4003FB7AD /* ProfilerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34955DE227D54DB4003FB7AD /* ProfilerController.swift */; };
+		34955DE327D54DB4003FB7AD /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34955DE227D54DB4003FB7AD /* ProfileController.swift */; };
 		34955DE527D5C9F1003FB7AD /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34955DE427D5C9F1003FB7AD /* FeedCell.swift */; };
 		34955DE727D5CFDB003FB7AD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34955DE627D5CFDB003FB7AD /* Extensions.swift */; };
 		34F79B2D27E6BE3800B55017 /* CustomAuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F79B2C27E6BE3800B55017 /* CustomAuthButton.swift */; };
@@ -56,7 +56,7 @@
 		34955DDC27D54D80003FB7AD /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 		34955DDE27D54D90003FB7AD /* ImageSelectorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectorController.swift; sourceTree = "<group>"; };
 		34955DE027D54DA6003FB7AD /* NotificationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsController.swift; sourceTree = "<group>"; };
-		34955DE227D54DB4003FB7AD /* ProfilerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilerController.swift; sourceTree = "<group>"; };
+		34955DE227D54DB4003FB7AD /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		34955DE427D5C9F1003FB7AD /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		34955DE627D5CFDB003FB7AD /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		34F79B2C27E6BE3800B55017 /* CustomAuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAuthButton.swift; sourceTree = "<group>"; };
@@ -170,7 +170,7 @@
 				34955DDC27D54D80003FB7AD /* SearchController.swift */,
 				34955DDE27D54D90003FB7AD /* ImageSelectorController.swift */,
 				34955DE027D54DA6003FB7AD /* NotificationsController.swift */,
-				34955DE227D54DB4003FB7AD /* ProfilerController.swift */,
+				34955DE227D54DB4003FB7AD /* ProfileController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -338,7 +338,7 @@
 				34955DE127D54DA6003FB7AD /* NotificationsController.swift in Sources */,
 				34955DDD27D54D80003FB7AD /* SearchController.swift in Sources */,
 				34955DBF27D312A2003FB7AD /* AppDelegate.swift in Sources */,
-				34955DE327D54DB4003FB7AD /* ProfilerController.swift in Sources */,
+				34955DE327D54DB4003FB7AD /* ProfileController.swift in Sources */,
 				34955DDB27D54D75003FB7AD /* FeedController.swift in Sources */,
 				34955DD927D317C8003FB7AD /* MainTabController.swift in Sources */,
 				3451F79F27EFF100002F8E0C /* ProfileCell.swift in Sources */,

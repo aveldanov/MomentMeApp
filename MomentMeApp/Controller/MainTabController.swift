@@ -38,13 +38,14 @@ class MainTabController: UITabBarController{
     func configureViewControllers(){
         view.backgroundColor = .white
         
-        let layout = UICollectionViewFlowLayout()
+        let feedLayout = UICollectionViewFlowLayout()
+        let profileLayout = UICollectionViewLayout()
         
-        let feed = templateNavigaitonController(unselectedImage: #imageLiteral(resourceName: "home_unselected") , selectedImage: #imageLiteral(resourceName: "home_selected"), rootViewController: FeedController(collectionViewLayout: layout))
+        let feed = templateNavigaitonController(unselectedImage: #imageLiteral(resourceName: "home_unselected") , selectedImage: #imageLiteral(resourceName: "home_selected"), rootViewController: FeedController(collectionViewLayout: feedLayout))
         let search = templateNavigaitonController(unselectedImage: #imageLiteral(resourceName: "search_unselected") , selectedImage: #imageLiteral(resourceName: "search_selected"), rootViewController: SearchController())
         let imageSelctor = templateNavigaitonController(unselectedImage: #imageLiteral(resourceName: "plus_unselected") , selectedImage: #imageLiteral(resourceName: "plus_unselected"), rootViewController: ImageSelectorController())
         let notifications = templateNavigaitonController(unselectedImage: #imageLiteral(resourceName: "like_unselected") , selectedImage: #imageLiteral(resourceName: "like_selected"), rootViewController: NotificationsController())
-        let profile = templateNavigaitonController(unselectedImage: #imageLiteral(resourceName: "profile_unselected") , selectedImage: #imageLiteral(resourceName: "profile_selected"), rootViewController: ProfilerController())
+        let profile = templateNavigaitonController(unselectedImage: #imageLiteral(resourceName: "profile_unselected") , selectedImage: #imageLiteral(resourceName: "profile_selected"), rootViewController: ProfileController(collectionViewLayout: profileLayout))
         
         viewControllers = [feed, search, imageSelctor, notifications, profile]
         tabBar.tintColor = .black
