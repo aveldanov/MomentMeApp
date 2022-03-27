@@ -8,12 +8,24 @@
 import UIKit
 
 
-class ProfilerController: UIViewController{
+class ProfilerController: UICollectionViewController{
     
+    // MARK: - Properties
+    
+    
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .systemPurple
     }
+    
+    // MARK: - Helpers
+    
+    func configureCollectionView(){
+        view.backgroundColor = .white
+    }
+    
+    
+    
 }
