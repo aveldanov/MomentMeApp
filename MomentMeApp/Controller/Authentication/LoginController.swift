@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 
 class LoginController: UIViewController{
@@ -35,6 +36,7 @@ class LoginController: UIViewController{
     
     private let loginButton: UIButton = {
         let button = CustomAuthButton(placeholder: "Login", buttonType: .system)
+        button.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
         return button
     }()
     
@@ -74,9 +76,26 @@ class LoginController: UIViewController{
         }else{
             viewModel.password = sender.text
         }
-        
         updateForm()
+    }
     
+    @objc func handleLogin(){
+        guard let email = emailTextField.text?.lowercased() else{
+            return
+        }
+        guard let password = passwordTextField.text?.lowercased() else{
+            return
+        }
+        
+        AuthService.loginUserIn(withEmail: email, password: password) { result, error in
+            if let error = error{
+                print("[LoginController] logout error \(error.localizedDescription)")
+                return
+            }
+            
+            self.dismiss(animated: true, completion: nil)
+        }
+        
     }
     
     
