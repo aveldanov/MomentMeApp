@@ -24,9 +24,9 @@ class ProfileController: UICollectionViewController{
     // MARK: - Helpers
     
     func configureCollectionView(){
-        collectionView.backgroundColor = .blue
+        collectionView.backgroundColor = .yellow
         collectionView.register(ProfileCell.self, forCellWithReuseIdentifier: ProfileCell.identifier)
-        collectionView.register(ProfileHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ProfileHeader.identifier)
+//        collectionView.register(ProfileHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ProfileHeader.identifier)
     }
 }
 
@@ -39,8 +39,7 @@ extension ProfileController{
     }
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProfileCell.identifier, for: indexPath) as! ProfileCell
-        cell.backgroundColor = .yellow
-        
+        cell.backgroundColor = .red
         
         return cell
     }
