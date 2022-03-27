@@ -22,8 +22,23 @@ class FeedController: UICollectionViewController{
     func configureUI(){
         collectionView.backgroundColor = .white
         collectionView.register(FeedCell.self, forCellWithReuseIdentifier: FeedCell.identifier)
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(handleLogout))
     }
+    
+    // MARK: - Actions
+
+    func handleLogout(){
+        
+        
+        
+    }
+
 }
+
+
+
+
 
 // MARK: - CollectionView DataSource
 
