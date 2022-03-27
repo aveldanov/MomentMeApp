@@ -11,14 +11,14 @@ import Firebase
 
 class FeedController: UICollectionViewController{
     
-// MARK: - Lifecycle
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
     }
     
     
-// MARK: - Helpers
+    // MARK: - Helpers
     
     func configureUI(){
         collectionView.backgroundColor = .white
@@ -29,10 +29,10 @@ class FeedController: UICollectionViewController{
     }
     
     // MARK: - Actions
-
+    
     @objc func handleLogout(){
         do{
-           try Auth.auth().signOut()
+            try Auth.auth().signOut()
             let controller = LoginController()
             let nav = UINavigationController(rootViewController: controller)
             nav.modalPresentationStyle = .fullScreen
@@ -41,7 +41,7 @@ class FeedController: UICollectionViewController{
             print("[FeedController] failed to signout")
         }
     }
-
+    
 }
 
 
