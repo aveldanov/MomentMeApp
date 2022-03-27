@@ -39,7 +39,7 @@ class MainTabController: UITabBarController{
         view.backgroundColor = .white
         
         let feedLayout = UICollectionViewFlowLayout()
-        let profileLayout = UICollectionViewLayout()
+        let profileLayout = UICollectionViewFlowLayout()
         
         let feed = templateNavigaitonController(unselectedImage: #imageLiteral(resourceName: "home_unselected") , selectedImage: #imageLiteral(resourceName: "home_selected"), rootViewController: FeedController(collectionViewLayout: feedLayout))
         let search = templateNavigaitonController(unselectedImage: #imageLiteral(resourceName: "search_unselected") , selectedImage: #imageLiteral(resourceName: "search_selected"), rootViewController: SearchController())

@@ -24,9 +24,9 @@ class ProfileController: UICollectionViewController{
     // MARK: - Helpers
     
     func configureCollectionView(){
-        collectionView.backgroundColor = .yellow
+        collectionView.backgroundColor = .blue
         collectionView.register(ProfileCell.self, forCellWithReuseIdentifier: ProfileCell.identifier)
-//        collectionView.register(ProfileHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ProfileHeader.identifier)
+        collectionView.register(ProfileHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ProfileHeader.identifier)
     }
 }
 
