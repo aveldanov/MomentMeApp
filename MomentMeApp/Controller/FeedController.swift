@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 
 class FeedController: UICollectionViewController{
@@ -28,10 +29,16 @@ class FeedController: UICollectionViewController{
     
     // MARK: - Actions
 
-    func handleLogout(){
-        
-        
-        
+    @objc func handleLogout(){
+        do{
+           try Auth.auth().signOut()
+            let controller = LoginController()
+            let nav = UINavigationController(rootViewController: controller)
+            nav.modalPresentationStyle = .fullScreen
+            self.present(nav, animated: true, completion: nil)
+        } catch{
+            print("[FeedController] failed to signout")
+        }
     }
 
 }

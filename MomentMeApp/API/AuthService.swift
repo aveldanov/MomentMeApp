@@ -43,9 +43,5 @@ struct AuthService{
                 Firestore.firestore().collection("users").document(uid).setData(data, completion: completion)
             }
         }
-        
     }
-    
-    
-    
 }
