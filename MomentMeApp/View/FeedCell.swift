@@ -92,6 +92,7 @@ class FeedCell: UICollectionViewCell{
         super.init(frame: frame)
         
         backgroundColor = .white
+        
         addSubview(profileImageView)
         profileImageView.anchor(top:topAnchor,
                                 left: leftAnchor,
