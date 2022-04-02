@@ -41,12 +41,51 @@ class ProfileHeader: UICollectionReusableView{
         return button
     }()
     
-    private let postLabel: UILabel = {
+    private lazy var postsLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
         label.textAlignment = .center
+        label.attributedText = attributedStatText(value: 1, label: "Posts")
         return label
     }()
+    
+    private lazy var followersLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        label.attributedText = attributedStatText(value: 3, label: "Followers")
+        return label
+    }()
+    
+    private lazy var followingLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        label.attributedText = attributedStatText(value: 1, label: "Following")
+        return label
+    }()
+    
+    
+    private let gridButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(#imageLiteral(resourceName: "grid"), for: .normal)
+        return button
+    }()
+    
+    private let listButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(#imageLiteral(resourceName: "list"), for: .normal)
+        button.tintColor = UIColor(white: 0, alpha: 0.2)
+        return button
+    }()
+    
+    private let bookmarkButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(#imageLiteral(resourceName: "ribbon"), for: .normal)
+        button.tintColor = UIColor(white: 0, alpha: 0.2)
+        return button
+    }()
+    
 
     
     // MARK: - :Lifecycle
@@ -70,6 +109,13 @@ class ProfileHeader: UICollectionReusableView{
         editProfileFollowButton.anchor(top: nameLabel.bottomAnchor, left: leftAnchor, right: rightAnchor, paddingTop: 16, paddingLeft: 24, paddingRight: 24)
         
         
+        let stack = UIStackView(arrangedSubviews: [postsLabel, followersLabel,followingLabel])
+        stack.distribution = .fillEqually
+        addSubview(stack)
+        stack.centerY(inView: profileImageView)
+        stack.anchor(left: profileImageView.rightAnchor, right: rightAnchor,paddingLeft: 12, paddingRight: 12, height: 50)
+        
+        
     }
     
     required init?(coder: NSCoder) {
@@ -86,4 +132,14 @@ class ProfileHeader: UICollectionReusableView{
     }
     
     
+    // MARK: - Helpers
+    
+    func attributedStatText(value: Int, label: String) -> NSAttributedString{
+        let attributedText = NSMutableAttributedString(string: "\(value)\n", attributes: [.font: UIFont.boldSystemFont(ofSize: 14)])
+        let secondString = NSAttributedString(string: "\(label)", attributes: [.font: UIFont.systemFont(ofSize: 14),.foregroundColor: UIColor.lightGray])
+        attributedText.append(secondString)
+        
+        return attributedText
+    }
+
 }
