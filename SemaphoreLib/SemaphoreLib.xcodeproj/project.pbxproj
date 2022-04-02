@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		349F956C27F695BD00415F97 /* SemaphoreLib.h in Headers */ = {isa = PBXBuildFile; fileRef = 349F956B27F695BD00415F97 /* SemaphoreLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		349F957427F695CA00415F97 /* HelloLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 349F957227F695CA00415F97 /* HelloLogger.m */; };
-		349F957527F695CA00415F97 /* HelloLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 349F957327F695CA00415F97 /* HelloLogger.h */; };
+		349F957527F695CA00415F97 /* HelloLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 349F957327F695CA00415F97 /* HelloLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */

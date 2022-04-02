@@ -10,7 +10,7 @@
 @implementation HelloLogger
 
 - (void)helloWithText:(NSString *)text {
-    NSLog(@"Hello, %@", text);
+    NSLog(@"Hello2, %@", text);
 }
 
 @end

@@ -14,3 +14,5 @@ FOUNDATION_EXPORT double SemaphoreLibVersionNumber;
 FOUNDATION_EXPORT const unsigned char SemaphoreLibVersionString[];
 
 
+#import <SemaphoreLib/HelloLogger.h>
+

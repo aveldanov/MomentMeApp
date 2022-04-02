@@ -15,6 +15,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    HelloLogger *log = [[HelloLogger alloc] init];
+    
+    [log helloWithText:@"Passed Text"];
+    
+    
 }
 
 
