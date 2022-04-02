@@ -52,7 +52,7 @@ class MainTabController: UITabBarController{
     }
     
     
-    func templateNavigaitonController(unselectedImage:UIImage, selectedImage: UIImage, rootViewController: UIViewController)->UINavigationController{
+    func templateNavigaitonController(unselectedImage:UIImage, selectedImage: UIImage, rootViewController: UIViewController) -> UINavigationController{
         
         let nav = UINavigationController(rootViewController: rootViewController)
         nav.tabBarItem.image = unselectedImage
@@ -60,7 +60,16 @@ class MainTabController: UITabBarController{
         
         nav.navigationBar.tintColor = .black
         
+   
+
         return nav
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        // Show the navigation bar on other view controllers
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
     

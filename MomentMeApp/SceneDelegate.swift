@@ -28,10 +28,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if #available(iOS 15.0, *){
             let appearanceTabBar = UITabBarAppearance()
             let appearanceNavBar = UINavigationBarAppearance()
+            
             UITabBar.appearance().scrollEdgeAppearance = appearanceTabBar
+            UINavigationBar.appearance().scrollEdgeAppearance = appearanceNavBar
         }
-        
-        
+
         window?.makeKeyAndVisible()
     }
 
