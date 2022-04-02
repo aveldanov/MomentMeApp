@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3410262427F8C4D70002CB3A /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3410262327F8C4D70002CB3A /* UserService.swift */; };
 		3410262627F8C50D0002CB3A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3410262527F8C50D0002CB3A /* Constants.swift */; };
+		3410262827F8DB5C0002CB3A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3410262727F8DB5C0002CB3A /* User.swift */; };
 		3440D37727DC4A74005C7169 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3440D37627DC4A74005C7169 /* LoginController.swift */; };
 		3440D37927DC4A82005C7169 /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3440D37827DC4A82005C7169 /* RegistrationController.swift */; };
 		3440D37D27DD9C7D005C7169 /* CustomAuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3440D37C27DD9C7D005C7169 /* CustomAuthTextField.swift */; };
@@ -39,6 +40,7 @@
 /* Begin PBXFileReference section */
 		3410262327F8C4D70002CB3A /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		3410262527F8C50D0002CB3A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		3410262727F8DB5C0002CB3A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		3440D37627DC4A74005C7169 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		3440D37827DC4A82005C7169 /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		3440D37C27DD9C7D005C7169 /* CustomAuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAuthTextField.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 		34955DD227D3172C003FB7AD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3410262727F8DB5C0002CB3A /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 				34955DE727D5CFDB003FB7AD /* Extensions.swift in Sources */,
 				34955DC127D312A2003FB7AD /* SceneDelegate.swift in Sources */,
 				3440D37927DC4A82005C7169 /* RegistrationController.swift in Sources */,
+				3410262827F8DB5C0002CB3A /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
