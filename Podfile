@@ -14,7 +14,7 @@ pod 'Firebase/Storage'
 pod 'Firebase/Auth'
 
 # pod 'ActiveLabel'
-# pod 'SDWebImage', '~> 5.0'
+pod 'SDWebImage', '~> 5.0'
 # pod 'JGProgressHUD'
 # pod 'YPImagePicker'
 
