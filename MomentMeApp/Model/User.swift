@@ -22,6 +22,5 @@ struct User{
         self.profileImageURL = dictionary["profileImageURL"] as? String ?? ""
         self.username = dictionary["username"] as? String ?? ""
         self.uid = dictionary["uid"] as? String ?? ""
-
     }
 }

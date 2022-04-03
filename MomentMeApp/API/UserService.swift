@@ -18,16 +18,16 @@ struct UserService{
             guard let dictionary = snapshot?.data() else{
                 return
             }
-            
-            
-            
-            
-            
+            // BAD solution:
 //            let email = dictionary["email"] as? String
-//
 //
 //            let user = User(email: <#T##String#>, fullname: <#T##String#>, profileImageURL: <#T##String#>, username: <#T##String#>, uid: <#T##String#>)
 
+            
+            //GOOD Solution:
+            let user = User(dictionary: dictionary)
+            completion(user)
+            
         }
         
     }
