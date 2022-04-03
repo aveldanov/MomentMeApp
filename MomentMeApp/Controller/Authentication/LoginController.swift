@@ -8,12 +8,18 @@
 import UIKit
 import Firebase
 
+protocol AuthenticationDelegate: AnyObject{
+    func authenticationDidComplete()
+}
+
 
 class LoginController: UIViewController{
     
     // MARK: - Properties
     
     private var viewModel = LoginViewModel()
+    weak var delegate: AuthenticationDelegate?
+    
     
     private let iconImage: UIImageView = {
         let imageView = UIImageView(image: #imageLiteral(resourceName: "MomentMe"))
@@ -93,7 +99,8 @@ class LoginController: UIViewController{
                 return
             }
             
-            self.dismiss(animated: true, completion: nil)
+            print("[LoginController] User logged In")
+            self.delegate?.authenticationDidComplete()
         }
         
     }
