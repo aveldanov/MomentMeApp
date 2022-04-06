@@ -20,7 +20,17 @@
     
     [log helloWithText:@"Passed Text"];
     
+}
+
+
+- (void) viewDidAppear:(BOOL)animated{
+    [super viewWillAppear: animated];
     
+    SemaphoreViewController *vc = [[SemaphoreViewController alloc] init];
+    
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController: vc];
+        
+    [self presentViewController:nav animated:YES completion:nil];
 }
 
 

@@ -16,3 +16,6 @@ FOUNDATION_EXPORT const unsigned char SemaphoreLibVersionString[];
 
 #import <SemaphoreLib/HelloLogger.h>
 
+// two methods only within this static class
+// 1) login
+// 2) show semaphoreVC

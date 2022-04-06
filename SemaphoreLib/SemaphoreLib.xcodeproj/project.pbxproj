@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3410261E27F7EF9E0002CB3A /* SemaphoreViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3410261C27F7EF9E0002CB3A /* SemaphoreViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3410261F27F7EF9E0002CB3A /* SemaphoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3410261D27F7EF9E0002CB3A /* SemaphoreViewController.m */; };
 		349F956C27F695BD00415F97 /* SemaphoreLib.h in Headers */ = {isa = PBXBuildFile; fileRef = 349F956B27F695BD00415F97 /* SemaphoreLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		349F957427F695CA00415F97 /* HelloLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 349F957227F695CA00415F97 /* HelloLogger.m */; };
 		349F957527F695CA00415F97 /* HelloLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 349F957327F695CA00415F97 /* HelloLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3410261C27F7EF9E0002CB3A /* SemaphoreViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SemaphoreViewController.h; sourceTree = "<group>"; };
+		3410261D27F7EF9E0002CB3A /* SemaphoreViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SemaphoreViewController.m; sourceTree = "<group>"; };
 		349F956827F695BD00415F97 /* SemaphoreLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SemaphoreLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		349F956B27F695BD00415F97 /* SemaphoreLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SemaphoreLib.h; sourceTree = "<group>"; };
 		349F957227F695CA00415F97 /* HelloLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelloLogger.m; sourceTree = "<group>"; };
@@ -52,6 +56,8 @@
 				349F956B27F695BD00415F97 /* SemaphoreLib.h */,
 				349F957327F695CA00415F97 /* HelloLogger.h */,
 				349F957227F695CA00415F97 /* HelloLogger.m */,
+				3410261C27F7EF9E0002CB3A /* SemaphoreViewController.h */,
+				3410261D27F7EF9E0002CB3A /* SemaphoreViewController.m */,
 			);
 			path = SemaphoreLib;
 			sourceTree = "<group>";
@@ -64,6 +70,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				349F956C27F695BD00415F97 /* SemaphoreLib.h in Headers */,
+				3410261E27F7EF9E0002CB3A /* SemaphoreViewController.h in Headers */,
 				349F957527F695CA00415F97 /* HelloLogger.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				349F957427F695CA00415F97 /* HelloLogger.m in Sources */,
+				3410261F27F7EF9E0002CB3A /* SemaphoreViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
