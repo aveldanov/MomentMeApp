@@ -98,7 +98,6 @@ class LoginController: UIViewController{
                 print("[LoginController] logout error \(error.localizedDescription)")
                 return
             }
-            
             print("[LoginController] User logged In")
             self.delegate?.authenticationDidComplete()
         }

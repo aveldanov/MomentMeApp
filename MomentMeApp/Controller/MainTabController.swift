@@ -71,17 +71,13 @@ class MainTabController: UITabBarController{
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
-    
 }
 
 extension MainTabController: AuthenticationDelegate{
     func authenticationDidComplete() {
         print("[MainTabController] AUTH complete")
         self.dismiss(animated: true, completion: nil)
-
     }
-    
-    
 }
 
 
