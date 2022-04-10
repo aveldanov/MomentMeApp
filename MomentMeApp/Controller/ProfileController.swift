@@ -12,13 +12,25 @@ class ProfileController: UICollectionViewController{
     
     // MARK: - Properties
     
-    var user: User?{
-        didSet{
-            collectionView.reloadData()
-        }
-    }
+//    var user: User?{
+//        didSet{
+//            collectionView.reloadData()
+//        }
+//    }
+    
+    private var user: User
     
     // MARK: - Lifecycle
+    
+    // Dependecy Injection
+    init(user: User){
+        super.init(collectionViewLayout: UICollectionViewFlowLayout())
+        self.user = user
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
