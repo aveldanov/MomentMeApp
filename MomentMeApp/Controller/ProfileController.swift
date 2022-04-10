@@ -12,20 +12,21 @@ class ProfileController: UICollectionViewController{
     
     // MARK: - Properties
     
-//    var user: User?{
-//        didSet{
-//            collectionView.reloadData()
-//        }
-//    }
+    //    var user: User?{
+    //        didSet{
+    //            collectionView.reloadData()
+    //        }
+    //    }
     
     private var user: User
     
     // MARK: - Lifecycle
     
-    // Dependecy Injection
+    // Dependecy Injection - force to init vc with USER property
+    // fetching user from maintabcontroller
     init(user: User){
-        super.init(collectionViewLayout: UICollectionViewFlowLayout())
         self.user = user
+        super.init(collectionViewLayout: UICollectionViewFlowLayout())
     }
     
     required init?(coder: NSCoder) {
@@ -35,21 +36,14 @@ class ProfileController: UICollectionViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCollectionView()
-        fetchUser()
     }
     
-    // MARK: - API
-    
-    func fetchUser(){
-        UserService.fetchUser { user in
-            self.user = user
-            self.navigationItem.title = user.username
-        }
-    }
+
     
     // MARK: - Helpers
     
     func configureCollectionView(){
+        navigationItem.title = user.username
         collectionView.backgroundColor = .white
         collectionView.register(ProfileCell.self, forCellWithReuseIdentifier: ProfileCell.identifier)
         collectionView.register(ProfileHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ProfileHeader.identifier)
@@ -72,9 +66,9 @@ extension ProfileController{
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: ProfileHeader.identifier, for: indexPath) as! ProfileHeader
-        if let user = user{
-            header.viewModel = ProfileHeaderViewModel(user: user)
-        }
+        
+        header.viewModel = ProfileHeaderViewModel(user: user)
+        
         return header
     }
 }
