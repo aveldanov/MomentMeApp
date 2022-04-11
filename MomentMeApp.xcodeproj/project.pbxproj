@@ -33,6 +33,7 @@
 		34955DE327D54DB4003FB7AD /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34955DE227D54DB4003FB7AD /* ProfileController.swift */; };
 		34955DE527D5C9F1003FB7AD /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34955DE427D5C9F1003FB7AD /* FeedCell.swift */; };
 		34955DE727D5CFDB003FB7AD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34955DE627D5CFDB003FB7AD /* Extensions.swift */; };
+		34A4B53F2803A09700896B75 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A4B53E2803A09700896B75 /* UserCell.swift */; };
 		34F79B2D27E6BE3800B55017 /* CustomAuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F79B2C27E6BE3800B55017 /* CustomAuthButton.swift */; };
 		34F79B2F27E6CC4A00B55017 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F79B2E27E6CC4A00B55017 /* AuthenticationViewModel.swift */; };
 		6ED07277745C2CF27278A2CC /* Pods_MomentMeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85F51D59FAACD782244304E5 /* Pods_MomentMeApp.framework */; };
@@ -67,6 +68,7 @@
 		34955DE227D54DB4003FB7AD /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		34955DE427D5C9F1003FB7AD /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		34955DE627D5CFDB003FB7AD /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		34A4B53E2803A09700896B75 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		34F79B2C27E6BE3800B55017 /* CustomAuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAuthButton.swift; sourceTree = "<group>"; };
 		34F79B2E27E6CC4A00B55017 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		85F51D59FAACD782244304E5 /* Pods_MomentMeApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MomentMeApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				34955DE427D5C9F1003FB7AD /* FeedCell.swift */,
+				34A4B53E2803A09700896B75 /* UserCell.swift */,
 				3440D37C27DD9C7D005C7169 /* CustomAuthTextField.swift */,
 				34F79B2C27E6BE3800B55017 /* CustomAuthButton.swift */,
 				3451F7A227EFF113002F8E0C /* Profile */,
@@ -350,6 +353,7 @@
 				3451F7A127EFF10D002F8E0C /* ProfileHeader.swift in Sources */,
 				34955DDF27D54D90003FB7AD /* ImageSelectorController.swift in Sources */,
 				34955DE127D54DA6003FB7AD /* NotificationsController.swift in Sources */,
+				34A4B53F2803A09700896B75 /* UserCell.swift in Sources */,
 				34955DDD27D54D80003FB7AD /* SearchController.swift in Sources */,
 				34955DBF27D312A2003FB7AD /* AppDelegate.swift in Sources */,
 				34955DE327D54DB4003FB7AD /* ProfileController.swift in Sources */,
