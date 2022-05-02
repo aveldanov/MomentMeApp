@@ -34,7 +34,7 @@ extension SearchController{
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: UserCell.identifier, for: indexPath)
-        
+        cell.backgroundColor = .systemBlue
         return cell
     }
     
