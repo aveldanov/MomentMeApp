@@ -6,6 +6,7 @@
 //
 
 import Firebase
+import Darwin
 
 
 struct UserService{
@@ -23,13 +24,21 @@ struct UserService{
 //
 //            let user = User(email: <#T##String#>, fullname: <#T##String#>, profileImageURL: <#T##String#>, username: <#T##String#>, uid: <#T##String#>)
 
-            
             //GOOD Solution:
             let user = User(dictionary: dictionary)
             completion(user)
-            
         }
-        
+    }
+    
+    static func fetchUser(completion: @escaping ([User])->Void){
+        COLLECTION_USERS.getDocuments { snapshot, error in
+            guard let snapshot = snapshot else {
+                return
+            }
+            
+            let users = snapshot.documents.map({User(dictionary: $0.data())})
+            completion(users)
+        }
     }
     
 }

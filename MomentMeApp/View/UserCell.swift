@@ -24,14 +24,14 @@ class UserCell: UITableViewCell {
     
     private let userNameLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 16)
+        label.font = UIFont.boldSystemFont(ofSize: 14)
         label.text = "Venom"
         return label
     }()
     
     private let fullnameNameLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 16)
+        label.font = UIFont.systemFont(ofSize: 14)
         label.text = "Eddie"
         label.textColor = .lightGray
         return label
@@ -44,9 +44,18 @@ class UserCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         addSubview(profileImageView)
-        profileImageView.setDimensions(height: 60, width: 60)
-        profileImageView.layer.cornerRadius = 60/2
+        profileImageView.setDimensions(height: 48, width: 48)
+        profileImageView.layer.cornerRadius = 48/2
         profileImageView.centerY(inView: self, leftAnchor: leftAnchor, paddingLeft: 12)
+        
+        let stack = UIStackView(arrangedSubviews: [userNameLabel,fullnameNameLabel])
+        
+        stack.axis = .vertical
+        stack.spacing = 4
+        stack.alignment = .leading
+        
+        addSubview(stack)
+        stack.centerY(inView: profileImageView, leftAnchor: profileImageView.rightAnchor, paddingLeft: 8)
         
     }
     
