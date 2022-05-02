@@ -21,7 +21,6 @@ class SearchController: UITableViewController{
         view.backgroundColor = .white
         
         tableView.register(UserCell.self, forCellReuseIdentifier: UserCell.identifier)
-        
     }
     
 }

@@ -101,6 +101,3 @@ extension MainTabController: AuthenticationDelegate{
         self.dismiss(animated: true, completion: nil)
     }
 }
-
-
-
