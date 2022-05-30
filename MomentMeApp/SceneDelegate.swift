@@ -18,8 +18,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
-        window?.rootViewController = MainTabController()
-//         window?.rootViewController = UINavigationController(rootViewController: LoginController())
+//        window?.rootViewController = MainTabController()
+         window?.rootViewController = UINavigationController(rootViewController: LoginController())
      
 
         
@@ -27,10 +27,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         if #available(iOS 15.0, *){
             let appearanceTabBar = UITabBarAppearance()
-            let appearanceNavBar = UINavigationBarAppearance()
             
-            UITabBar.appearance().scrollEdgeAppearance = appearanceTabBar
-            UINavigationBar.appearance().scrollEdgeAppearance = appearanceNavBar
+//            let appearanceNavBar = UINavigationBarAppearance()
+            
+//            UITabBar.appearance().scrollEdgeAppearance = appearanceTabBar
+//            UINavigationBar.appearance().scrollEdgeAppearance = appearanceNavBar
         }
 
         window?.makeKeyAndVisible()
