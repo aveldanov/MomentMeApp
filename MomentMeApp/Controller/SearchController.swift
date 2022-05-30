@@ -9,11 +9,27 @@ import UIKit
 
 class SearchController: UITableViewController{
     
+    // MARK: - LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        fetchUsers()
     }
+    
+    
+    // MARK: - API
+    
+    func fetchUsers(){
+        UserService.fetchUsers { users in
+            debugPrint("0000000000", users.map{$0.email})
+            
+            
+        }
+        
+    }
+    
+    
     
     // MARK: - Helpers
     
