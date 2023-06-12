@@ -9,19 +9,33 @@
 /* Begin PBXBuildFile section */
 		3457D6D72A36A3A80067D9CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3457D6D62A36A3A80067D9CC /* AppDelegate.swift */; };
 		3457D6D92A36A3A80067D9CC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3457D6D82A36A3A80067D9CC /* SceneDelegate.swift */; };
-		3457D6DB2A36A3A80067D9CC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3457D6DA2A36A3A80067D9CC /* ViewController.swift */; };
+		3457D6DB2A36A3A80067D9CC /* CNTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3457D6DA2A36A3A80067D9CC /* CNTabViewController.swift */; };
 		3457D6E02A36A3A90067D9CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3457D6DF2A36A3A90067D9CC /* Assets.xcassets */; };
 		3457D6E32A36A3A90067D9CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3457D6E12A36A3A90067D9CC /* LaunchScreen.storyboard */; };
+		3457D6F42A36BE8A0067D9CC /* CNLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3457D6F32A36BE8A0067D9CC /* CNLocation.swift */; };
+		3457D6F62A36BEA10067D9CC /* CNCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3457D6F52A36BEA10067D9CC /* CNCharacter.swift */; };
+		3457D6F82A36BEAC0067D9CC /* CNEpisode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3457D6F72A36BEAC0067D9CC /* CNEpisode.swift */; };
+		3457D6FB2A36C2680067D9CC /* CNCharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3457D6FA2A36C2680067D9CC /* CNCharacterViewController.swift */; };
+		3457D6FD2A36C27B0067D9CC /* CNLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3457D6FC2A36C27B0067D9CC /* CNLocationViewController.swift */; };
+		3457D6FF2A36C2850067D9CC /* CNEpisodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3457D6FE2A36C2850067D9CC /* CNEpisodeViewController.swift */; };
+		3457D7012A36C28F0067D9CC /* CNSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3457D7002A36C28F0067D9CC /* CNSettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3457D6D32A36A3A80067D9CC /* CartoonApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CartoonApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3457D6D62A36A3A80067D9CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3457D6D82A36A3A80067D9CC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3457D6DA2A36A3A80067D9CC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3457D6DA2A36A3A80067D9CC /* CNTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNTabViewController.swift; sourceTree = "<group>"; };
 		3457D6DF2A36A3A90067D9CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3457D6E22A36A3A90067D9CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3457D6E42A36A3A90067D9CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3457D6F32A36BE8A0067D9CC /* CNLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNLocation.swift; sourceTree = "<group>"; };
+		3457D6F52A36BEA10067D9CC /* CNCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNCharacter.swift; sourceTree = "<group>"; };
+		3457D6F72A36BEAC0067D9CC /* CNEpisode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNEpisode.swift; sourceTree = "<group>"; };
+		3457D6FA2A36C2680067D9CC /* CNCharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNCharacterViewController.swift; sourceTree = "<group>"; };
+		3457D6FC2A36C27B0067D9CC /* CNLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNLocationViewController.swift; sourceTree = "<group>"; };
+		3457D6FE2A36C2850067D9CC /* CNEpisodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNEpisodeViewController.swift; sourceTree = "<group>"; };
+		3457D7002A36C28F0067D9CC /* CNSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNSettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +68,85 @@
 		3457D6D52A36A3A80067D9CC /* CartoonApp */ = {
 			isa = PBXGroup;
 			children = (
-				3457D6D62A36A3A80067D9CC /* AppDelegate.swift */,
-				3457D6D82A36A3A80067D9CC /* SceneDelegate.swift */,
-				3457D6DA2A36A3A80067D9CC /* ViewController.swift */,
-				3457D6DF2A36A3A90067D9CC /* Assets.xcassets */,
-				3457D6E12A36A3A90067D9CC /* LaunchScreen.storyboard */,
+				3457D6F02A36B7C50067D9CC /* Resources */,
+				3457D6EF2A36B7AE0067D9CC /* APIClient */,
+				3457D6EE2A36B7A50067D9CC /* Managers */,
+				3457D6ED2A36B73A0067D9CC /* ViewModels */,
+				3457D6EC2A36B7310067D9CC /* Views */,
+				3457D6EB2A36B69A0067D9CC /* Models */,
+				3457D6EA2A36B6910067D9CC /* Controllers */,
 				3457D6E42A36A3A90067D9CC /* Info.plist */,
 			);
 			path = CartoonApp;
+			sourceTree = "<group>";
+		};
+		3457D6EA2A36B6910067D9CC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3457D6F92A36C2210067D9CC /* Core */,
+				3457D6DA2A36A3A80067D9CC /* CNTabViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		3457D6EB2A36B69A0067D9CC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3457D6F32A36BE8A0067D9CC /* CNLocation.swift */,
+				3457D6F52A36BEA10067D9CC /* CNCharacter.swift */,
+				3457D6F72A36BEAC0067D9CC /* CNEpisode.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3457D6EC2A36B7310067D9CC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3457D6ED2A36B73A0067D9CC /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		3457D6EE2A36B7A50067D9CC /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		3457D6EF2A36B7AE0067D9CC /* APIClient */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = APIClient;
+			sourceTree = "<group>";
+		};
+		3457D6F02A36B7C50067D9CC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3457D6D82A36A3A80067D9CC /* SceneDelegate.swift */,
+				3457D6D62A36A3A80067D9CC /* AppDelegate.swift */,
+				3457D6DF2A36A3A90067D9CC /* Assets.xcassets */,
+				3457D6E12A36A3A90067D9CC /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3457D6F92A36C2210067D9CC /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				3457D6FA2A36C2680067D9CC /* CNCharacterViewController.swift */,
+				3457D6FC2A36C27B0067D9CC /* CNLocationViewController.swift */,
+				3457D6FE2A36C2850067D9CC /* CNEpisodeViewController.swift */,
+				3457D7002A36C28F0067D9CC /* CNSettingsViewController.swift */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,8 +219,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3457D6DB2A36A3A80067D9CC /* ViewController.swift in Sources */,
+				3457D6DB2A36A3A80067D9CC /* CNTabViewController.swift in Sources */,
+				3457D6F42A36BE8A0067D9CC /* CNLocation.swift in Sources */,
+				3457D7012A36C28F0067D9CC /* CNSettingsViewController.swift in Sources */,
+				3457D6FD2A36C27B0067D9CC /* CNLocationViewController.swift in Sources */,
+				3457D6FF2A36C2850067D9CC /* CNEpisodeViewController.swift in Sources */,
+				3457D6FB2A36C2680067D9CC /* CNCharacterViewController.swift in Sources */,
+				3457D6F82A36BEAC0067D9CC /* CNEpisode.swift in Sources */,
 				3457D6D72A36A3A80067D9CC /* AppDelegate.swift in Sources */,
+				3457D6F62A36BEA10067D9CC /* CNCharacter.swift in Sources */,
 				3457D6D92A36A3A80067D9CC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
