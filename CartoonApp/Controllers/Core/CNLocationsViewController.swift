@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  CNLocationViewController.swift
 //  CartoonApp
 //
 //  Created by Anton Veldanov on 6/11/23.
@@ -7,13 +7,13 @@
 
 import UIKit
 
-class CNTabViewController: UITabBarController {
+final class CNLocationsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
+
+        // Do any additional setup after loading the view.
     }
 
 
 }
-

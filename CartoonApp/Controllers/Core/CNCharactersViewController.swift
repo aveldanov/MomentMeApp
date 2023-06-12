@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CNCharacterViewController: UIViewController {
+final class CNCharactersViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
