@@ -19,6 +19,9 @@
 		3457D6FD2A36C27B0067D9CC /* CNLocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3457D6FC2A36C27B0067D9CC /* CNLocationsViewController.swift */; };
 		3457D6FF2A36C2850067D9CC /* CNEpisodesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3457D6FE2A36C2850067D9CC /* CNEpisodesViewController.swift */; };
 		3457D7012A36C28F0067D9CC /* CNSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3457D7002A36C28F0067D9CC /* CNSettingsViewController.swift */; };
+		346256212A3FF39000EE09CB /* CNService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346256202A3FF39000EE09CB /* CNService.swift */; };
+		346256232A3FF3A300EE09CB /* CNRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346256222A3FF3A300EE09CB /* CNRequest.swift */; };
+		346256252A3FF43700EE09CB /* CNEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346256242A3FF43600EE09CB /* CNEndpoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,9 @@
 		3457D6FC2A36C27B0067D9CC /* CNLocationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNLocationsViewController.swift; sourceTree = "<group>"; };
 		3457D6FE2A36C2850067D9CC /* CNEpisodesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNEpisodesViewController.swift; sourceTree = "<group>"; };
 		3457D7002A36C28F0067D9CC /* CNSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNSettingsViewController.swift; sourceTree = "<group>"; };
+		346256202A3FF39000EE09CB /* CNService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNService.swift; sourceTree = "<group>"; };
+		346256222A3FF3A300EE09CB /* CNRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNRequest.swift; sourceTree = "<group>"; };
+		346256242A3FF43600EE09CB /* CNEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNEndpoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +128,9 @@
 		3457D6EF2A36B7AE0067D9CC /* APIClient */ = {
 			isa = PBXGroup;
 			children = (
+				346256202A3FF39000EE09CB /* CNService.swift */,
+				346256222A3FF3A300EE09CB /* CNRequest.swift */,
+				346256242A3FF43600EE09CB /* CNEndpoint.swift */,
 			);
 			path = APIClient;
 			sourceTree = "<group>";
@@ -219,13 +228,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				346256232A3FF3A300EE09CB /* CNRequest.swift in Sources */,
 				3457D6DB2A36A3A80067D9CC /* CNTabBarViewController.swift in Sources */,
 				3457D6F42A36BE8A0067D9CC /* CNLocation.swift in Sources */,
+				346256252A3FF43700EE09CB /* CNEndpoint.swift in Sources */,
 				3457D7012A36C28F0067D9CC /* CNSettingsViewController.swift in Sources */,
 				3457D6FD2A36C27B0067D9CC /* CNLocationsViewController.swift in Sources */,
 				3457D6FF2A36C2850067D9CC /* CNEpisodesViewController.swift in Sources */,
 				3457D6FB2A36C2680067D9CC /* CNCharactersViewController.swift in Sources */,
 				3457D6F82A36BEAC0067D9CC /* CNEpisode.swift in Sources */,
+				346256212A3FF39000EE09CB /* CNService.swift in Sources */,
 				3457D6D72A36A3A80067D9CC /* AppDelegate.swift in Sources */,
 				3457D6F62A36BEA10067D9CC /* CNCharacter.swift in Sources */,
 				3457D6D92A36A3A80067D9CC /* SceneDelegate.swift in Sources */,
