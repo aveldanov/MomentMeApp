@@ -31,9 +31,9 @@ final class CNTabBarViewController: UITabBarController {
         let navigationController4 = UINavigationController(rootViewController: settingsViewController)
 
         navigationController1.tabBarItem = UITabBarItem(title: "Characters", image: UIImage(systemName: "person"), tag: 1)
-        navigationController2.tabBarItem = UITabBarItem(title: "Locations", image: UIImage(systemName: "globe"), tag: 1)
-        navigationController3.tabBarItem = UITabBarItem(title: "Episodes", image: UIImage(systemName: "tv"), tag: 1)
-        navigationController4.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(systemName: "gear"), tag: 1)
+        navigationController2.tabBarItem = UITabBarItem(title: "Locations", image: UIImage(systemName: "globe"), tag: 2)
+        navigationController3.tabBarItem = UITabBarItem(title: "Episodes", image: UIImage(systemName: "tv"), tag: 3)
+        navigationController4.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(systemName: "gear"), tag: 4)
 
         let navigationControllers = [navigationController1, navigationController2, navigationController3, navigationController4]
 
