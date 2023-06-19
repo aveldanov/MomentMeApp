@@ -23,6 +23,9 @@
 		346256232A3FF3A300EE09CB /* CNRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346256222A3FF3A300EE09CB /* CNRequest.swift */; };
 		346256252A3FF43700EE09CB /* CNEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346256242A3FF43600EE09CB /* CNEndpoint.swift */; };
 		346256272A3FFAC600EE09CB /* CNOrigin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346256262A3FFAC600EE09CB /* CNOrigin.swift */; };
+		346256292A3FFB6000EE09CB /* CNSingleLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346256282A3FFB6000EE09CB /* CNSingleLocation.swift */; };
+		3462562B2A3FFCBB00EE09CB /* CNCharacterStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3462562A2A3FFCBB00EE09CB /* CNCharacterStatus.swift */; };
+		3462562D2A3FFCD600EE09CB /* CNCharacterGender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3462562C2A3FFCD600EE09CB /* CNCharacterGender.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +47,9 @@
 		346256222A3FF3A300EE09CB /* CNRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNRequest.swift; sourceTree = "<group>"; };
 		346256242A3FF43600EE09CB /* CNEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNEndpoint.swift; sourceTree = "<group>"; };
 		346256262A3FFAC600EE09CB /* CNOrigin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNOrigin.swift; sourceTree = "<group>"; };
+		346256282A3FFB6000EE09CB /* CNSingleLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNSingleLocation.swift; sourceTree = "<group>"; };
+		3462562A2A3FFCBB00EE09CB /* CNCharacterStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNCharacterStatus.swift; sourceTree = "<group>"; };
+		3462562C2A3FFCD600EE09CB /* CNCharacterGender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNCharacterGender.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +105,8 @@
 		3457D6EB2A36B69A0067D9CC /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				3462562E2A40161E00EE09CB /* CharacterModels */,
 				3457D6F32A36BE8A0067D9CC /* CNLocation.swift */,
-				3457D6F52A36BEA10067D9CC /* CNCharacter.swift */,
 				346256262A3FFAC600EE09CB /* CNOrigin.swift */,
 				3457D6F72A36BEAC0067D9CC /* CNEpisode.swift */,
 			);
@@ -159,6 +165,17 @@
 				3457D7002A36C28F0067D9CC /* CNSettingsViewController.swift */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		3462562E2A40161E00EE09CB /* CharacterModels */ = {
+			isa = PBXGroup;
+			children = (
+				3457D6F52A36BEA10067D9CC /* CNCharacter.swift */,
+				3462562A2A3FFCBB00EE09CB /* CNCharacterStatus.swift */,
+				3462562C2A3FFCD600EE09CB /* CNCharacterGender.swift */,
+				346256282A3FFB6000EE09CB /* CNSingleLocation.swift */,
+			);
+			path = CharacterModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,11 +252,14 @@
 				3457D6DB2A36A3A80067D9CC /* CNTabBarViewController.swift in Sources */,
 				3457D6F42A36BE8A0067D9CC /* CNLocation.swift in Sources */,
 				346256252A3FF43700EE09CB /* CNEndpoint.swift in Sources */,
+				3462562B2A3FFCBB00EE09CB /* CNCharacterStatus.swift in Sources */,
 				3457D7012A36C28F0067D9CC /* CNSettingsViewController.swift in Sources */,
 				3457D6FD2A36C27B0067D9CC /* CNLocationsViewController.swift in Sources */,
 				3457D6FF2A36C2850067D9CC /* CNEpisodesViewController.swift in Sources */,
+				3462562D2A3FFCD600EE09CB /* CNCharacterGender.swift in Sources */,
 				3457D6FB2A36C2680067D9CC /* CNCharactersViewController.swift in Sources */,
 				3457D6F82A36BEAC0067D9CC /* CNEpisode.swift in Sources */,
+				346256292A3FFB6000EE09CB /* CNSingleLocation.swift in Sources */,
 				346256212A3FF39000EE09CB /* CNService.swift in Sources */,
 				3457D6D72A36A3A80067D9CC /* AppDelegate.swift in Sources */,
 				3457D6F62A36BEA10067D9CC /* CNCharacter.swift in Sources */,

@@ -10,12 +10,12 @@ import Foundation
 struct CNCharacter: Codable {
     let id: Int
     let name: String
-    let status: String
+    let status: CNCharacterStatus
     let species: String
     let type: String?
-    let gender: String
+    let gender: CNCharacterGender
     let origin: CNOrigin
-    let location: CNOrigin
+    let location: CNSingleLocation
     let image: String
     let episode: [String]
     let url: String
