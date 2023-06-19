@@ -14,6 +14,4 @@ final class CNCharactersViewController: UIViewController {
         view.backgroundColor = .systemBackground
         title = "Characters"
     }
-
-
 }
