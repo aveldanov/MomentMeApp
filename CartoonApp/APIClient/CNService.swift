@@ -19,7 +19,9 @@ final class CNService {
     /// - Parameters:
     ///   - request: Request Instance
     ///   - completion: Callback with data for error
-    public func execute(_ request: CNRequest, completion: @escaping (Result<String, Error>) -> Void) {
+    public func execute<T: Codable>(_ request: CNRequest,
+                                    expecting type: T.Type,
+                                    completion: @escaping (Result<T, Error>) -> Void) {
 
     }
 }

@@ -13,5 +13,19 @@ final class CNCharactersViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         title = "Characters"
+
+
+        let request = CNRequest(endpoint: .character, queryParams: [URLQueryItem(name: "name", value: "Rick"), URLQueryItem(name: "status", value: "alive")])
+        print(request.url)
+        print(request.url?.pathComponents)
+        print(request.url?.baseURL)
+
+        CNService.shared.execute(request, expecting: Int.self) { result in
+            switch result {
+            case .success(<#T##Int#>)
+            }
+        }
+
     }
+
 }

@@ -16,14 +16,18 @@ final class CNRequest {
     // 
     // https://rickandmortyapi.com/api/character/2
 
+    /// API Constants
     private struct Constants {
         static let baseUrl = "https://rickandmortyapi.com/api"
     }
 
+    /// Desired endpoint
     private let endpoint: CNEndpoint
 
-    private let pathComponents: [String]
+    /// Path components for API if any
+    private let pathComponents: Set<String>
 
+    /// Arguments for API if any
     private let queryParams: [URLQueryItem]
 
     /// Constructed url for the API request in String format
@@ -53,13 +57,22 @@ final class CNRequest {
         return string
     }
 
+    /// Computed & constructed API url
     public var url: URL? {
         return URL(string: urlString)
     }
 
+    /// Desired HTTP method
+    public let httpMethod = "GET"
+
     // MARK: - Public methods
 
-    public init(endpoint: CNEndpoint, pathComponents: [String] = [], queryParams: [URLQueryItem] = []) {
+    /// Construct request
+    /// - Parameters:
+    ///   - endpoint: target end poiint
+    ///   - pathComponents: collection of path components
+    ///   - queryParams: collection of query parameters
+    public init(endpoint: CNEndpoint, pathComponents: Set<String> = [], queryParams: [URLQueryItem] = []) {
         self.endpoint = endpoint
         self.pathComponents = pathComponents
         self.queryParams = queryParams
