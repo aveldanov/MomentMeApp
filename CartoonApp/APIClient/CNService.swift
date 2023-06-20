@@ -19,7 +19,7 @@ final class CNService {
     /// - Parameters:
     ///   - request: Request Instance
     ///   - completion: Callback with data for error
-    public func execute(_ request: CNRequest, completion: @escaping () -> Void) {
+    public func execute(_ request: CNRequest, completion: @escaping (Result<String, Error>) -> Void) {
 
     }
 }
