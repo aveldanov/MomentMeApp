@@ -15,6 +15,12 @@ final class CNService {
     /// Privitized Contructor
     private init() {}
 
+    enum CNServiceError: Error {
+        case failedToCreateRequest
+        case failedToGetData
+
+    }
+
     /// Send API call
     /// - Parameters:
     ///   - request: Request Instance
@@ -22,6 +28,27 @@ final class CNService {
     public func execute<T: Codable>(_ request: CNRequest,
                                     expecting type: T.Type,
                                     completion: @escaping (Result<T, Error>) -> Void) {
+        guard let urlRequest = self.request(from: request) else {
+            completion(.failure(CNServiceError.failedToCreateRequest))
+            return
+        }
+
+        let task = URLSession.shared.dataTask(with: urlRequest) { data, _, error in
+            guard let data, error == nil else {
+                completion(.failure(error ?? CNServiceError.failedToGetData))
+                return
+            }
+            // Decode response
+
+            do {
+                let result = try JSONDecoder().decode(type.self, from: data)
+                completion(.success(result))
+            } catch {
+                completion(.failure(error))
+            }
+        }
+        task.resume()
+
 
     }
 

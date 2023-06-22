@@ -26,6 +26,7 @@
 		346256292A3FFB6000EE09CB /* CNSingleLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346256282A3FFB6000EE09CB /* CNSingleLocation.swift */; };
 		3462562B2A3FFCBB00EE09CB /* CNCharacterStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3462562A2A3FFCBB00EE09CB /* CNCharacterStatus.swift */; };
 		3462562D2A3FFCD600EE09CB /* CNCharacterGender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3462562C2A3FFCD600EE09CB /* CNCharacterGender.swift */; };
+		34B0E5332A44045700CBAEB4 /* CNGetAllCharactersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B0E5322A44045700CBAEB4 /* CNGetAllCharactersResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		346256282A3FFB6000EE09CB /* CNSingleLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNSingleLocation.swift; sourceTree = "<group>"; };
 		3462562A2A3FFCBB00EE09CB /* CNCharacterStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNCharacterStatus.swift; sourceTree = "<group>"; };
 		3462562C2A3FFCD600EE09CB /* CNCharacterGender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNCharacterGender.swift; sourceTree = "<group>"; };
+		34B0E5322A44045700CBAEB4 /* CNGetAllCharactersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNGetAllCharactersResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,10 +107,8 @@
 		3457D6EB2A36B69A0067D9CC /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				3462562E2A40161E00EE09CB /* CharacterModels */,
-				3457D6F32A36BE8A0067D9CC /* CNLocation.swift */,
-				346256262A3FFAC600EE09CB /* CNOrigin.swift */,
-				3457D6F72A36BEAC0067D9CC /* CNEpisode.swift */,
+				34B0E5312A44043700CBAEB4 /* ResponseTypes */,
+				34B0E5302A44041000CBAEB4 /* DataTypes */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -167,15 +167,26 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
-		3462562E2A40161E00EE09CB /* CharacterModels */ = {
+		34B0E5302A44041000CBAEB4 /* DataTypes */ = {
 			isa = PBXGroup;
 			children = (
+				3457D6F32A36BE8A0067D9CC /* CNLocation.swift */,
+				346256262A3FFAC600EE09CB /* CNOrigin.swift */,
+				3457D6F72A36BEAC0067D9CC /* CNEpisode.swift */,
 				3457D6F52A36BEA10067D9CC /* CNCharacter.swift */,
 				3462562A2A3FFCBB00EE09CB /* CNCharacterStatus.swift */,
 				3462562C2A3FFCD600EE09CB /* CNCharacterGender.swift */,
 				346256282A3FFB6000EE09CB /* CNSingleLocation.swift */,
 			);
-			path = CharacterModels;
+			path = DataTypes;
+			sourceTree = "<group>";
+		};
+		34B0E5312A44043700CBAEB4 /* ResponseTypes */ = {
+			isa = PBXGroup;
+			children = (
+				34B0E5322A44045700CBAEB4 /* CNGetAllCharactersResponse.swift */,
+			);
+			path = ResponseTypes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34B0E5332A44045700CBAEB4 /* CNGetAllCharactersResponse.swift in Sources */,
 				346256232A3FF3A300EE09CB /* CNRequest.swift in Sources */,
 				3457D6DB2A36A3A80067D9CC /* CNTabBarViewController.swift in Sources */,
 				3457D6F42A36BE8A0067D9CC /* CNLocation.swift in Sources */,

@@ -77,3 +77,8 @@ final class CNRequest {
         self.queryParams = queryParams
     }
 }
+
+
+extension CNRequest {
+    static let listCharactersRequest = CNRequest(endpoint: .character)
+}
