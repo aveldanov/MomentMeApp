@@ -13,7 +13,6 @@ final class CNRequest {
     // endpoint
     // path component
     // query params
-    // 
     // https://rickandmortyapi.com/api/character/2
 
     /// API Constants
@@ -25,7 +24,7 @@ final class CNRequest {
     private let endpoint: CNEndpoint
 
     /// Path components for API if any
-    private let pathComponents: Set<String>
+    private let pathComponents: [String]
 
     /// Arguments for API if any
     private let queryParams: [URLQueryItem]
@@ -72,7 +71,7 @@ final class CNRequest {
     ///   - endpoint: target end poiint
     ///   - pathComponents: collection of path components
     ///   - queryParams: collection of query parameters
-    public init(endpoint: CNEndpoint, pathComponents: Set<String> = [], queryParams: [URLQueryItem] = []) {
+    public init(endpoint: CNEndpoint, pathComponents: [String] = [], queryParams: [URLQueryItem] = []) {
         self.endpoint = endpoint
         self.pathComponents = pathComponents
         self.queryParams = queryParams

@@ -24,4 +24,16 @@ final class CNService {
                                     completion: @escaping (Result<T, Error>) -> Void) {
 
     }
+
+    // MARK: - Private Methods
+
+    private func request(from cnRequest: CNRequest) -> URLRequest? {
+        guard let url = cnRequest.url else {
+            return nil
+        }
+        var request = URLRequest(url: url)
+        request.httpMethod = cnRequest.httpMethod
+
+        return request
+    }
 }
