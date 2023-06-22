@@ -14,10 +14,12 @@ final class CNCharactersViewController: UIViewController {
         view.backgroundColor = .systemBackground
         title = "Characters"
 
-        CNService.shared.execute(CNRequest.listCharactersRequest, expecting: String.self) { result in
+        CNService.shared.execute(CNRequest.listCharactersRequest, expecting: CNGetAllCharactersResponse.self) { result in
             switch result {
             case .success(let model):
-                print(String(describing: model))
+                print("Total: " + model.info.pages.description)
+                print("Page result count: " + model.results.count.description)
+
             case .failure(let error):
                 print(String(describing: error))
             }
