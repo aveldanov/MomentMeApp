@@ -5,10 +5,10 @@
 //  Created by Anton Veldanov on 6/25/23.
 //
 
-import Foundation
+import UIKit
 
 
-struct CNCharacterListViewViewModel {
+final class CNCharacterListViewViewModel: NSObject {
 
     func fetchCharacters() {
         CNService.shared.execute(CNRequest.listCharactersRequest, expecting: CNGetAllCharactersResponse.self) { result in
@@ -22,5 +22,30 @@ struct CNCharacterListViewViewModel {
             }
         }
     }
+}
+
+extension CNCharacterListViewViewModel: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+
+    // UICollectionViewDataSource methods
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 20
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        cell.backgroundColor = .systemPink
+        return cell
+    }
+
+// UICollectionViewDelegateFlowLayout methods
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        <#code#>
+    }
+
+
 }
 
