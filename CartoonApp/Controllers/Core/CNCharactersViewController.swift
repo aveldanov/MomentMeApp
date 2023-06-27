@@ -9,7 +9,6 @@ import UIKit
 
 final class CNCharactersViewController: UIViewController {
 
-
     private let characterListView = CNCharacterListView()
 
     override func viewDidLoad() {
@@ -19,8 +18,6 @@ final class CNCharactersViewController: UIViewController {
 
         setupViewHierarchy()
         setupViewLayout()
-
-
     }
 
     private func setupViewHierarchy() {
@@ -34,9 +31,6 @@ final class CNCharactersViewController: UIViewController {
             characterListView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             characterListView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             characterListView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
-
-
         ])
     }
-
 }

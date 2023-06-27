@@ -27,6 +27,7 @@
 		3462562B2A3FFCBB00EE09CB /* CNCharacterStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3462562A2A3FFCBB00EE09CB /* CNCharacterStatus.swift */; };
 		3462562D2A3FFCD600EE09CB /* CNCharacterGender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3462562C2A3FFCD600EE09CB /* CNCharacterGender.swift */; };
 		34A99DEE2A494EAD002B4916 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A99DED2A494EAD002B4916 /* Extensions.swift */; };
+		34A99DF02A4AA35F002B4916 /* CNCharacterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A99DEF2A4AA35F002B4916 /* CNCharacterCollectionViewCell.swift */; };
 		34B0E5332A44045700CBAEB4 /* CNGetAllCharactersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B0E5322A44045700CBAEB4 /* CNGetAllCharactersResponse.swift */; };
 		34B0E5352A49187300CBAEB4 /* CNCharacterListViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B0E5342A49187300CBAEB4 /* CNCharacterListViewViewModel.swift */; };
 		34B0E5372A49190B00CBAEB4 /* CNCharacterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B0E5362A49190B00CBAEB4 /* CNCharacterListView.swift */; };
@@ -55,6 +56,7 @@
 		3462562A2A3FFCBB00EE09CB /* CNCharacterStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNCharacterStatus.swift; sourceTree = "<group>"; };
 		3462562C2A3FFCD600EE09CB /* CNCharacterGender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNCharacterGender.swift; sourceTree = "<group>"; };
 		34A99DED2A494EAD002B4916 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		34A99DEF2A4AA35F002B4916 /* CNCharacterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNCharacterCollectionViewCell.swift; sourceTree = "<group>"; };
 		34B0E5322A44045700CBAEB4 /* CNGetAllCharactersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNGetAllCharactersResponse.swift; sourceTree = "<group>"; };
 		34B0E5342A49187300CBAEB4 /* CNCharacterListViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNCharacterListViewViewModel.swift; sourceTree = "<group>"; };
 		34B0E5362A49190B00CBAEB4 /* CNCharacterListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNCharacterListView.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				34B0E5362A49190B00CBAEB4 /* CNCharacterListView.swift */,
+				34A99DEF2A4AA35F002B4916 /* CNCharacterCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				34B0E5332A44045700CBAEB4 /* CNGetAllCharactersResponse.swift in Sources */,
+				34A99DF02A4AA35F002B4916 /* CNCharacterCollectionViewCell.swift in Sources */,
 				34B0E5352A49187300CBAEB4 /* CNCharacterListViewViewModel.swift in Sources */,
 				346256232A3FF3A300EE09CB /* CNRequest.swift in Sources */,
 				3457D6DB2A36A3A80067D9CC /* CNTabBarViewController.swift in Sources */,

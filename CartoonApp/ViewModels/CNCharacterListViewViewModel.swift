@@ -43,9 +43,10 @@ extension CNCharacterListViewViewModel: UICollectionViewDataSource, UICollection
 
 // UICollectionViewDelegateFlowLayout methods
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        <#code#>
+
+        let width = (collectionView.bounds.width - 30) / 2
+        let height = width * 1.5
+        return CGSize(width: width, height: height)
     }
-
-
 }
 
