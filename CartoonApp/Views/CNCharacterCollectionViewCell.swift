@@ -37,6 +37,8 @@ class CNCharacterCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         contentView.backgroundColor = .secondarySystemBackground
+        setupViewHierarchy()
+        setupViewLayout()
     }
 
     required init?(coder: NSCoder) {
@@ -45,24 +47,32 @@ class CNCharacterCollectionViewCell: UICollectionViewCell {
 
 
     private func setupViewHierarchy() {
-
-
+        contentView.addSubviews(imageView, nameLabel, statusLabel)
     }
 
 
     private func setupViewLayout() {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
+        statusLabel.translatesAutoresizingMaskIntoConstraints = false
 
+        let constraints: [NSLayoutConstraint] = [
+
+        ]
+
+        NSLayoutConstraint.activate(constraints)
     }
 
 
     override func prepareForReuse() {
         super.prepareForReuse()
+        imageView.image = nil
+        nameLabel.text = nil
+        statusLabel.text = nil
     }
 
     public func configure(with viewModel: CNCharacterCollectionViewCellViewModel) {
-
+        imageView.image = viewModel.
     }
     
 }
