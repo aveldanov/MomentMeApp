@@ -26,7 +26,7 @@ final class CNCharacterListViewViewModel: NSObject {
 
 extension CNCharacterListViewViewModel: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
-    // UICollectionViewDataSource methods
+    // MARK: - UICollectionViewDataSource methods
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -36,12 +36,11 @@ extension CNCharacterListViewViewModel: UICollectionViewDataSource, UICollection
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        cell.backgroundColor = .systemPink
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CNCharacterCollectionViewCell.identifier, for: indexPath)
         return cell
     }
 
-// UICollectionViewDelegateFlowLayout methods
+    // MARK: - UICollectionViewDelegateFlowLayout methods
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
         let width = (collectionView.bounds.width - 30) / 2

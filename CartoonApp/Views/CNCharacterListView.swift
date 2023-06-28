@@ -25,7 +25,7 @@ final class CNCharacterListView: UIView {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.isHidden = true
         collectionView.alpha = 0
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        collectionView.register(CNCharacterCollectionViewCell.self, forCellWithReuseIdentifier: CNCharacterCollectionViewCell.identifier)
         return collectionView
     }()
 
