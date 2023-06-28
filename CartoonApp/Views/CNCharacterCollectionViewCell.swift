@@ -37,6 +37,9 @@ class CNCharacterCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         contentView.backgroundColor = .secondarySystemBackground
+//        nameLabel.backgroundColor = .red
+//        statusLabel.backgroundColor = .yellow
+//        imageView.backgroundColor = .blue
         setupViewHierarchy()
         setupViewLayout()
     }
@@ -58,6 +61,22 @@ class CNCharacterCollectionViewCell: UICollectionViewCell {
 
         let constraints: [NSLayoutConstraint] = [
 
+            nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
+            nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -5),
+            nameLabel.bottomAnchor.constraint(equalTo: statusLabel.topAnchor, constant: -3),
+            nameLabel.heightAnchor.constraint(equalToConstant: 50),
+
+            statusLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
+            statusLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -5),
+            statusLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -3),
+            statusLabel.heightAnchor.constraint(equalToConstant: 50),
+
+            imageView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            imageView.bottomAnchor.constraint(equalTo: nameLabel.topAnchor, constant: -3)
+
+
         ]
 
         NSLayoutConstraint.activate(constraints)
@@ -72,7 +91,21 @@ class CNCharacterCollectionViewCell: UICollectionViewCell {
     }
 
     public func configure(with viewModel: CNCharacterCollectionViewCellViewModel) {
-        imageView.image = viewModel.
+        nameLabel.text = viewModel.characterName
+        statusLabel.text = viewModel.characterStatusText
+        viewModel.fetchImage { [weak self] result in
+            switch result {
+            case .success(let data):
+                DispatchQueue.main.async {
+                    let image = UIImage(data: data)
+                    self?.imageView.image = image
+                }
+                break
+            case .failure(let error):
+                print(String(describing: error))
+                break
+            }
+        }
     }
     
 }

@@ -14,8 +14,7 @@ final class CNCharacterListViewViewModel: NSObject {
         CNService.shared.execute(CNRequest.listCharactersRequest, expecting: CNGetAllCharactersResponse.self) { result in
             switch result {
             case .success(let model):
-                print("Total: " + model.info.pages.description)
-                print("Page result count: " + model.results.count.description)
+                print("Example Image Url "+String(model.results.first?.image ?? "No Image") )
 
             case .failure(let error):
                 print(String(describing: error))
@@ -36,7 +35,14 @@ extension CNCharacterListViewViewModel: UICollectionViewDataSource, UICollection
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CNCharacterCollectionViewCell.identifier, for: indexPath)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CNCharacterCollectionViewCell.identifier, for: indexPath) as? CNCharacterCollectionViewCell else {
+            fatalError("Unsupported Cell")
+        }
+        let viewModel = CNCharacterCollectionViewCellViewModel(
+            characterName: "Anton",
+            characterStatus: .alive,
+            characterImageURL: URL(string: "https://rickandmortyapi.com/api/character/avatar/1.jpeg"))
+        cell.configure(with: viewModel)
         return cell
     }
 
