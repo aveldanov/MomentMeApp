@@ -14,7 +14,8 @@ class CNCharacterCollectionViewCell: UICollectionViewCell {
 
     private let imageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
         return imageView
     }()
 
@@ -36,9 +37,11 @@ class CNCharacterCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        contentView.backgroundColor = .secondarySystemBackground
+
         setupViewHierarchy()
         setupViewLayout()
+        setupLayer()
+
     }
 
     required init?(coder: NSCoder) {
@@ -79,6 +82,19 @@ class CNCharacterCollectionViewCell: UICollectionViewCell {
         NSLayoutConstraint.activate(constraints)
     }
 
+    private func setupLayer() {
+        contentView.backgroundColor = .secondarySystemBackground
+        contentView.layer.cornerRadius = 8
+        contentView.layer.shadowColor = UIColor.label.cgColor
+        contentView.layer.shadowRadius = 4
+        contentView.layer.shadowOpacity = 0.3
+        contentView.layer.shadowOffset = CGSize(width: -4, height: 4)
+    }
+
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        setupLayer()
+    }
 
     override func prepareForReuse() {
         super.prepareForReuse()
