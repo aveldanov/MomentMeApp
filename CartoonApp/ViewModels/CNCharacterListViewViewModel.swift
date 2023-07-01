@@ -7,13 +7,21 @@
 
 import UIKit
 
+protocol CNCharacterListViewViewModelDelegate: AnyObject {
+    func didLoadInitialCharacters()
+}
 
 final class CNCharacterListViewViewModel: NSObject {
 
+    public weak var delegate: CNCharacterListViewViewModelDelegate?
     private var characters: [CNCharacter] = [] {
         didSet {
             for character in characters {
-                
+                let viewModel = CNCharacterCollectionViewCellViewModel(
+                    characterName: character.name,
+                    characterStatus: character.status,
+                    characterImageURL: URL(string: character.image))
+                cellViewModels.append(viewModel)
             }
         }
     }
@@ -25,7 +33,9 @@ final class CNCharacterListViewViewModel: NSObject {
             case .success(let resultModel):
                 let results = resultModel.results
                 self?.characters = results
-
+                DispatchQueue.main.async {
+                    self?.delegate?.didLoadInitialCharacters()
+                }
                 print("Example Image Url "+String(resultModel.results.first?.image ?? "No Image") )
 
             case .failure(let error):
@@ -43,17 +53,15 @@ extension CNCharacterListViewViewModel: UICollectionViewDataSource, UICollection
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return cellViewModels.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CNCharacterCollectionViewCell.identifier, for: indexPath) as? CNCharacterCollectionViewCell else {
             fatalError("Unsupported Cell")
         }
-        let viewModel = CNCharacterCollectionViewCellViewModel(
-            characterName: "Anton",
-            characterStatus: .alive,
-            characterImageURL: URL(string: "https://rickandmortyapi.com/api/character/avatar/1.jpeg"))
+
+        let viewModel = cellViewModels[indexPath.row]
         cell.configure(with: viewModel)
         return cell
     }

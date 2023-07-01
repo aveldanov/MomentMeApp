@@ -37,9 +37,6 @@ class CNCharacterCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         contentView.backgroundColor = .secondarySystemBackground
-//        nameLabel.backgroundColor = .red
-//        statusLabel.backgroundColor = .yellow
-//        imageView.backgroundColor = .blue
         setupViewHierarchy()
         setupViewLayout()
     }
@@ -61,15 +58,15 @@ class CNCharacterCollectionViewCell: UICollectionViewCell {
 
         let constraints: [NSLayoutConstraint] = [
 
-            nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
-            nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -5),
-            nameLabel.bottomAnchor.constraint(equalTo: statusLabel.topAnchor, constant: -3),
-            nameLabel.heightAnchor.constraint(equalToConstant: 50),
+            nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 7),
+            nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -7),
+            nameLabel.bottomAnchor.constraint(equalTo: statusLabel.topAnchor),
+            nameLabel.heightAnchor.constraint(equalToConstant: 30),
 
-            statusLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
-            statusLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -5),
+            statusLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 7),
+            statusLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -7),
             statusLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -3),
-            statusLabel.heightAnchor.constraint(equalToConstant: 50),
+            statusLabel.heightAnchor.constraint(equalToConstant: 30),
 
             imageView.topAnchor.constraint(equalTo: contentView.topAnchor),
             imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
