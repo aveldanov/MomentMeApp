@@ -10,11 +10,23 @@ import UIKit
 
 final class CNCharacterListViewViewModel: NSObject {
 
+    private var characters: [CNCharacter] = [] {
+        didSet {
+            for character in characters {
+                
+            }
+        }
+    }
+    private var cellViewModels: [CNCharacterCollectionViewCellViewModel] = []
+
     func fetchCharacters() {
-        CNService.shared.execute(CNRequest.listCharactersRequest, expecting: CNGetAllCharactersResponse.self) { result in
+        CNService.shared.execute(CNRequest.listCharactersRequest, expecting: CNGetAllCharactersResponse.self) { [weak self] result in
             switch result {
-            case .success(let model):
-                print("Example Image Url "+String(model.results.first?.image ?? "No Image") )
+            case .success(let resultModel):
+                let results = resultModel.results
+                self?.characters = results
+
+                print("Example Image Url "+String(resultModel.results.first?.image ?? "No Image") )
 
             case .failure(let error):
                 print(String(describing: error))
