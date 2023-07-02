@@ -15,7 +15,7 @@ final class CNCharactersViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         title = "Characters"
-
+        characterListView.delegate = self
         setupViewHierarchy()
         setupViewLayout()
     }
@@ -32,5 +32,17 @@ final class CNCharactersViewController: UIViewController {
             characterListView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             characterListView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
+    }
+}
+
+// MARK: - CNCharacterListViewDelegate
+
+extension CNCharactersViewController: CNCharacterListViewDelegate {
+    func cnCharacterListView(_ characterListView: CNCharacterListView, didSelectCharacter character: CNCharacter) {
+        // Open detail controller for the character
+        let viewModel = CNCharacterDetailViewViewModel(character: character)
+        let detailViewController = CNCharacterDetailViewController(viewModel: viewModel)
+        detailViewController.navigationItem.largeTitleDisplayMode = .never
+        navigationController?.pushViewController(detailViewController, animated: true)
     }
 }

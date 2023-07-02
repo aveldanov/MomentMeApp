@@ -26,6 +26,9 @@
 		346256292A3FFB6000EE09CB /* CNSingleLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346256282A3FFB6000EE09CB /* CNSingleLocation.swift */; };
 		3462562B2A3FFCBB00EE09CB /* CNCharacterStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3462562A2A3FFCBB00EE09CB /* CNCharacterStatus.swift */; };
 		3462562D2A3FFCD600EE09CB /* CNCharacterGender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3462562C2A3FFCD600EE09CB /* CNCharacterGender.swift */; };
+		348ADAD92A512D28008D65CD /* CNCharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348ADAD82A512D28008D65CD /* CNCharacterDetailViewController.swift */; };
+		348ADADB2A512EA8008D65CD /* CNCharacterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348ADADA2A512EA8008D65CD /* CNCharacterDetailView.swift */; };
+		348ADADD2A512EC3008D65CD /* CNCharacterDetailViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348ADADC2A512EC3008D65CD /* CNCharacterDetailViewViewModel.swift */; };
 		34A99DEE2A494EAD002B4916 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A99DED2A494EAD002B4916 /* Extensions.swift */; };
 		34A99DF02A4AA35F002B4916 /* CNCharacterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A99DEF2A4AA35F002B4916 /* CNCharacterCollectionViewCell.swift */; };
 		34A99DF22A4BE593002B4916 /* CNCharacterCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A99DF12A4BE593002B4916 /* CNCharacterCollectionViewCellViewModel.swift */; };
@@ -56,6 +59,9 @@
 		346256282A3FFB6000EE09CB /* CNSingleLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNSingleLocation.swift; sourceTree = "<group>"; };
 		3462562A2A3FFCBB00EE09CB /* CNCharacterStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNCharacterStatus.swift; sourceTree = "<group>"; };
 		3462562C2A3FFCD600EE09CB /* CNCharacterGender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNCharacterGender.swift; sourceTree = "<group>"; };
+		348ADAD82A512D28008D65CD /* CNCharacterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNCharacterDetailViewController.swift; sourceTree = "<group>"; };
+		348ADADA2A512EA8008D65CD /* CNCharacterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNCharacterDetailView.swift; sourceTree = "<group>"; };
+		348ADADC2A512EC3008D65CD /* CNCharacterDetailViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNCharacterDetailViewViewModel.swift; sourceTree = "<group>"; };
 		34A99DED2A494EAD002B4916 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		34A99DEF2A4AA35F002B4916 /* CNCharacterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNCharacterCollectionViewCell.swift; sourceTree = "<group>"; };
 		34A99DF12A4BE593002B4916 /* CNCharacterCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNCharacterCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
@@ -110,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				3457D6F92A36C2210067D9CC /* Core */,
+				348ADAD52A512C91008D65CD /* Other */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -128,6 +135,7 @@
 			children = (
 				34B0E5362A49190B00CBAEB4 /* CNCharacterListView.swift */,
 				34A99DEF2A4AA35F002B4916 /* CNCharacterCollectionViewCell.swift */,
+				348ADADA2A512EA8008D65CD /* CNCharacterDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -137,6 +145,7 @@
 			children = (
 				34B0E5342A49187300CBAEB4 /* CNCharacterListViewViewModel.swift */,
 				34A99DF12A4BE593002B4916 /* CNCharacterCollectionViewCellViewModel.swift */,
+				348ADADC2A512EC3008D65CD /* CNCharacterDetailViewViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -180,6 +189,14 @@
 				3457D7002A36C28F0067D9CC /* CNSettingsViewController.swift */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		348ADAD52A512C91008D65CD /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				348ADAD82A512D28008D65CD /* CNCharacterDetailViewController.swift */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 		34B0E5302A44041000CBAEB4 /* DataTypes */ = {
@@ -276,8 +293,10 @@
 			files = (
 				34B0E5332A44045700CBAEB4 /* CNGetAllCharactersResponse.swift in Sources */,
 				34A99DF02A4AA35F002B4916 /* CNCharacterCollectionViewCell.swift in Sources */,
+				348ADADB2A512EA8008D65CD /* CNCharacterDetailView.swift in Sources */,
 				34B0E5352A49187300CBAEB4 /* CNCharacterListViewViewModel.swift in Sources */,
 				346256232A3FF3A300EE09CB /* CNRequest.swift in Sources */,
+				348ADADD2A512EC3008D65CD /* CNCharacterDetailViewViewModel.swift in Sources */,
 				3457D6DB2A36A3A80067D9CC /* CNTabBarViewController.swift in Sources */,
 				3457D6F42A36BE8A0067D9CC /* CNLocation.swift in Sources */,
 				346256252A3FF43700EE09CB /* CNEndpoint.swift in Sources */,
@@ -290,6 +309,7 @@
 				3457D6FB2A36C2680067D9CC /* CNCharactersViewController.swift in Sources */,
 				34A99DEE2A494EAD002B4916 /* Extensions.swift in Sources */,
 				3457D6F82A36BEAC0067D9CC /* CNEpisode.swift in Sources */,
+				348ADAD92A512D28008D65CD /* CNCharacterDetailViewController.swift in Sources */,
 				346256292A3FFB6000EE09CB /* CNSingleLocation.swift in Sources */,
 				346256212A3FF39000EE09CB /* CNService.swift in Sources */,
 				3457D6D72A36A3A80067D9CC /* AppDelegate.swift in Sources */,

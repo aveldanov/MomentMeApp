@@ -9,6 +9,7 @@ import UIKit
 
 protocol CNCharacterListViewViewModelDelegate: AnyObject {
     func didLoadInitialCharacters()
+    func didSelectCharacter(_ character: CNCharacter)
 }
 
 final class CNCharacterListViewViewModel: NSObject {
@@ -72,6 +73,12 @@ extension CNCharacterListViewViewModel: UICollectionViewDataSource, UICollection
         let width = (collectionView.bounds.width - 30) / 2
         let height = width * 1.5
         return CGSize(width: width, height: height)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        let character = characters[indexPath.row]
+        delegate?.didSelectCharacter(character)
     }
 }
 
