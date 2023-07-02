@@ -16,10 +16,8 @@ protocol CNCharacterListViewViewModelDelegate: AnyObject {
 final class CNCharacterListViewViewModel: NSObject {
 
     public weak var delegate: CNCharacterListViewViewModelDelegate?
-    public var shouldShowMoreIndicator: Bool {
-        return false
-    }
     private var cellViewModels: [CNCharacterCollectionViewCellViewModel] = []
+    private var apiInfo: CNGetAllCharactersResponse.Info? = nil
 
     private var characters: [CNCharacter] = [] {
         didSet {
@@ -33,13 +31,17 @@ final class CNCharacterListViewViewModel: NSObject {
         }
     }
 
+    public var shouldShowMoreIndicator: Bool {
+        return apiInfo?.next != nil
+    }
+
     /// Fetch initial set of characters
     func fetchCharacters() {
         CNService.shared.execute(CNRequest.listCharactersRequest, expecting: CNGetAllCharactersResponse.self) { [weak self] result in
             switch result {
             case .success(let resultModel):
-                let results = resultModel.results
-                self?.characters = results
+                self?.characters = resultModel.results
+                self?.apiInfo = resultModel.info
                 DispatchQueue.main.async {
                     self?.delegate?.didLoadInitialCharacters()
                 }
@@ -53,7 +55,7 @@ final class CNCharacterListViewViewModel: NSObject {
 
     /// Paginate when additional characters are needed
     public func fetchAdditionalCharacters() {
-
+        // Fetch characters
     }
 
 
@@ -105,7 +107,7 @@ extension CNCharacterListViewViewModel: UIScrollViewDelegate {
             return
         }
 
-        
+
     }
 }
 
