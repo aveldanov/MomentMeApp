@@ -12,9 +12,15 @@ protocol CNCharacterListViewViewModelDelegate: AnyObject {
     func didSelectCharacter(_ character: CNCharacter)
 }
 
+/// View Model to handle charater list logic
 final class CNCharacterListViewViewModel: NSObject {
 
     public weak var delegate: CNCharacterListViewViewModelDelegate?
+    public var shouldShowMoreIndicator: Bool {
+        return false
+    }
+    private var cellViewModels: [CNCharacterCollectionViewCellViewModel] = []
+
     private var characters: [CNCharacter] = [] {
         didSet {
             for character in characters {
@@ -26,8 +32,8 @@ final class CNCharacterListViewViewModel: NSObject {
             }
         }
     }
-    private var cellViewModels: [CNCharacterCollectionViewCellViewModel] = []
 
+    /// Fetch initial set of characters
     func fetchCharacters() {
         CNService.shared.execute(CNRequest.listCharactersRequest, expecting: CNGetAllCharactersResponse.self) { [weak self] result in
             switch result {
@@ -44,7 +50,16 @@ final class CNCharacterListViewViewModel: NSObject {
             }
         }
     }
+
+    /// Paginate when additional characters are needed
+    public func fetchAdditionalCharacters() {
+
+    }
+
+
 }
+
+// MARK: - Collection View Methods
 
 extension CNCharacterListViewViewModel: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
@@ -79,6 +94,18 @@ extension CNCharacterListViewViewModel: UICollectionViewDataSource, UICollection
         collectionView.deselectItem(at: indexPath, animated: true)
         let character = characters[indexPath.row]
         delegate?.didSelectCharacter(character)
+    }
+}
+
+// MARK: - Scroll View
+
+extension CNCharacterListViewViewModel: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        guard shouldShowMoreIndicator else {
+            return
+        }
+
+        
     }
 }
 
