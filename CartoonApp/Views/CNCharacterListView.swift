@@ -32,6 +32,9 @@ final class CNCharacterListView: UIView {
         collectionView.isHidden = true
         collectionView.alpha = 0
         collectionView.register(CNCharacterCollectionViewCell.self, forCellWithReuseIdentifier: CNCharacterCollectionViewCell.identifier)
+        collectionView.register(CNFooterLoadingCollectionReusableView.self,
+                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter,
+                                withReuseIdentifier: CNFooterLoadingCollectionReusableView.identifier)
         return collectionView
     }()
 

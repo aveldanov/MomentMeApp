@@ -19,6 +19,7 @@ final class CNCharacterListViewViewModel: NSObject {
     private var cellViewModels: [CNCharacterCollectionViewCellViewModel] = []
     private var apiInfo: CNGetAllCharactersResponse.Info? = nil
 
+    private var isLoadingMoreCharacters = false
     private var characters: [CNCharacter] = [] {
         didSet {
             for character in characters {
@@ -56,6 +57,8 @@ final class CNCharacterListViewViewModel: NSObject {
     /// Paginate when additional characters are needed
     public func fetchAdditionalCharacters() {
         // Fetch characters
+        print("[CNCharacterListViewViewModel] Fetch more!!!")
+        isLoadingMoreCharacters = true
     }
 
 
@@ -76,7 +79,7 @@ extension CNCharacterListViewViewModel: UICollectionViewDataSource, UICollection
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CNCharacterCollectionViewCell.identifier, for: indexPath) as? CNCharacterCollectionViewCell else {
-            fatalError("Unsupported Cell")
+            fatalError("[CNCharacterListViewViewModel] Unsupported Cell")
         }
 
         let viewModel = cellViewModels[indexPath.row]
@@ -97,17 +100,39 @@ extension CNCharacterListViewViewModel: UICollectionViewDataSource, UICollection
         let character = characters[indexPath.row]
         delegate?.didSelectCharacter(character)
     }
+
+    // Footer setup
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+
+        guard kind == UICollectionView.elementKindSectionFooter, let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: CNFooterLoadingCollectionReusableView.identifier, for: indexPath) as? CNFooterLoadingCollectionReusableView else {
+            fatalError("[CNCharacterListViewViewModel] could not load footer")
+        }
+        footer.startAnimating()
+        return footer
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        guard shouldShowMoreIndicator else {
+            return .zero
+        }
+        return CGSize(width: collectionView.frame.width, height: 100)
+    }
 }
 
 // MARK: - Scroll View
 
 extension CNCharacterListViewViewModel: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        guard shouldShowMoreIndicator else {
+        guard shouldShowMoreIndicator, !isLoadingMoreCharacters else {
             return
         }
+        let offset = scrollView.contentOffset.y
+        let totalContentHeight = scrollView.contentSize.height
+        let totalScrollViewFixedHeight = scrollView.frame.size.height
 
-
+        if offset >= (totalContentHeight - totalScrollViewFixedHeight - 120) {
+            fetchAdditionalCharacters()
+        }
     }
 }
 
