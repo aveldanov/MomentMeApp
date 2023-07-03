@@ -97,4 +97,10 @@ extension CNCharacterListView: CNCharacterListViewViewModelDelegate {
     func didSelectCharacter(_ character: CNCharacter) {
         delegate?.cnCharacterListView(self, didSelectCharacter: character)
     }
+
+    func didLoadMoreCharacters(with newIndexPaths: [IndexPath]) {
+        collectionView.performBatchUpdates {
+            self.collectionView.insertItems(at: newIndexPaths)
+        }
+    }
 }

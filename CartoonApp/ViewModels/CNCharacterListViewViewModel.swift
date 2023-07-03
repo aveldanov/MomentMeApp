@@ -9,6 +9,7 @@ import UIKit
 
 protocol CNCharacterListViewViewModelDelegate: AnyObject {
     func didLoadInitialCharacters()
+    func didLoadMoreCharacters(with newIndexPaths: [IndexPath])
     func didSelectCharacter(_ character: CNCharacter)
 }
 
@@ -22,12 +23,15 @@ final class CNCharacterListViewViewModel: NSObject {
     private var isLoadingMoreCharacters = false
     private var characters: [CNCharacter] = [] {
         didSet {
+            print("[CNCharacterListViewViewModel] Creating new models")
             for character in characters {
                 let viewModel = CNCharacterCollectionViewCellViewModel(
                     characterName: character.name,
                     characterStatus: character.status,
                     characterImageURL: URL(string: character.image))
-                cellViewModels.append(viewModel)
+                if cellViewModels.contains(viewModel) {
+                    cellViewModels.append(viewModel)
+                }
             }
         }
     }
@@ -71,18 +75,32 @@ final class CNCharacterListViewViewModel: NSObject {
 
         CNService.shared.execute(request, expecting: CNGetAllCharactersResponse.self) { [weak self] result in
             print("[CNCharacterListViewViewModel] Fetching more characters")
+            guard let strongSelf = self else {
+                return
+            }
+
             switch result {
             case .success(let resultModel):
-                self?.characters.append(contentsOf: resultModel.results)
-                self?.apiInfo = resultModel.info
+                let moreResults = resultModel.results
+                strongSelf.characters.append(contentsOf: moreResults)
+                strongSelf.apiInfo = resultModel.info
+
+                let originalCount = strongSelf.characters.count
+                let newCount = moreResults.count
+                let totalCount = originalCount + newCount
+                let startingIndex = totalCount - newCount
+                let indexPathsToAdd: [IndexPath] = Array(startingIndex..<startingIndex+newCount).compactMap({
+                    return IndexPath(row: $0, section: 0)
+                })
+                print(indexPathsToAdd)
                 DispatchQueue.main.async {
-                    self?.delegate?.didLoadInitialCharacters()
+                    strongSelf.delegate?.didLoadMoreCharacters(with: indexPathsToAdd)
                 }
-                self?.isLoadingMoreCharacters = false
+                strongSelf.isLoadingMoreCharacters = false
                 print("Example Image Url "+String(resultModel.results.first?.image ?? "No Image") )
             case .failure(let failure):
                 print(failure)
-                self?.isLoadingMoreCharacters = false
+                strongSelf.isLoadingMoreCharacters = false
             }
         }
     }

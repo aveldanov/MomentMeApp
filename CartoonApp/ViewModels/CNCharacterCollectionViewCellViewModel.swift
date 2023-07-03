@@ -7,11 +7,26 @@
 
 import Foundation
 
-final class CNCharacterCollectionViewCellViewModel {
+final class CNCharacterCollectionViewCellViewModel: Hashable {
+
+
 
     let characterName: String
     let characterStatus: CNCharacterStatus
     let characterImageURL: URL?
+
+    static func == (lhs: CNCharacterCollectionViewCellViewModel, rhs: CNCharacterCollectionViewCellViewModel) -> Bool {
+        return lhs.hashValue == rhs.hashValue
+    }
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(characterName)
+        hasher.combine(characterStatus)
+        hasher.combine(characterImageURL)
+
+
+    }
+
 
     // MARK: - Init
 
