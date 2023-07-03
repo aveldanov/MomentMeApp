@@ -55,10 +55,36 @@ final class CNCharacterListViewViewModel: NSObject {
     }
 
     /// Paginate when additional characters are needed
-    public func fetchAdditionalCharacters() {
+    public func fetchAdditionalCharacters(url: URL) {
         // Fetch characters
+        guard !isLoadingMoreCharacters else {
+            return
+        }
         print("[CNCharacterListViewViewModel] Fetch more!!!")
         isLoadingMoreCharacters = true
+
+        guard let request = CNRequest(url: url) else {
+            isLoadingMoreCharacters = false
+            print("[CNCharacterListViewViewModel] Failed to create request")
+            return
+        }
+
+        CNService.shared.execute(request, expecting: CNGetAllCharactersResponse.self) { [weak self] result in
+            print("[CNCharacterListViewViewModel] Fetching more characters")
+            switch result {
+            case .success(let resultModel):
+                self?.characters.append(contentsOf: resultModel.results)
+                self?.apiInfo = resultModel.info
+                DispatchQueue.main.async {
+                    self?.delegate?.didLoadInitialCharacters()
+                }
+                self?.isLoadingMoreCharacters = false
+                print("Example Image Url "+String(resultModel.results.first?.image ?? "No Image") )
+            case .failure(let failure):
+                print(failure)
+                self?.isLoadingMoreCharacters = false
+            }
+        }
     }
 
 
@@ -123,15 +149,23 @@ extension CNCharacterListViewViewModel: UICollectionViewDataSource, UICollection
 
 extension CNCharacterListViewViewModel: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        guard shouldShowMoreIndicator, !isLoadingMoreCharacters else {
+        guard shouldShowMoreIndicator,
+              !isLoadingMoreCharacters,
+              !cellViewModels.isEmpty,
+              let nextUrlString = apiInfo?.next,
+              let url = URL(string: nextUrlString) else {
             return
         }
-        let offset = scrollView.contentOffset.y
-        let totalContentHeight = scrollView.contentSize.height
-        let totalScrollViewFixedHeight = scrollView.frame.size.height
 
-        if offset >= (totalContentHeight - totalScrollViewFixedHeight - 120) {
-            fetchAdditionalCharacters()
+        Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { [weak self] timer in
+            let offset = scrollView.contentOffset.y
+            let totalContentHeight = scrollView.contentSize.height
+            let totalScrollViewFixedHeight = scrollView.frame.size.height
+
+            if offset >= (totalContentHeight - totalScrollViewFixedHeight - 120) {
+                self?.fetchAdditionalCharacters(url: url)
+            }
+            timer.invalidate()
         }
     }
 }
