@@ -29,7 +29,7 @@ final class CNCharacterListViewViewModel: NSObject {
                     characterName: character.name,
                     characterStatus: character.status,
                     characterImageURL: URL(string: character.image))
-                if cellViewModels.contains(viewModel) {
+                if !cellViewModels.contains(viewModel) {
                     cellViewModels.append(viewModel)
                 }
             }
@@ -82,30 +82,26 @@ final class CNCharacterListViewViewModel: NSObject {
             switch result {
             case .success(let resultModel):
                 let moreResults = resultModel.results
-                strongSelf.characters.append(contentsOf: moreResults)
                 strongSelf.apiInfo = resultModel.info
 
                 let originalCount = strongSelf.characters.count
                 let newCount = moreResults.count
                 let totalCount = originalCount + newCount
                 let startingIndex = totalCount - newCount
-                let indexPathsToAdd: [IndexPath] = Array(startingIndex..<startingIndex+newCount).compactMap({
+                let indexPathsToAdd: [IndexPath] = Array(startingIndex..<(startingIndex+newCount)).compactMap({
                     return IndexPath(row: $0, section: 0)
                 })
-                print(indexPathsToAdd)
+                strongSelf.characters.append(contentsOf: moreResults)
                 DispatchQueue.main.async {
                     strongSelf.delegate?.didLoadMoreCharacters(with: indexPathsToAdd)
                 }
                 strongSelf.isLoadingMoreCharacters = false
-                print("Example Image Url "+String(resultModel.results.first?.image ?? "No Image") )
             case .failure(let failure):
                 print(failure)
                 strongSelf.isLoadingMoreCharacters = false
             }
         }
     }
-
-
 }
 
 // MARK: - Collection View Methods

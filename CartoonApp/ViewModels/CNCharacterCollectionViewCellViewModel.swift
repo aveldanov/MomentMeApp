@@ -15,17 +15,7 @@ final class CNCharacterCollectionViewCellViewModel: Hashable {
     let characterStatus: CNCharacterStatus
     let characterImageURL: URL?
 
-    static func == (lhs: CNCharacterCollectionViewCellViewModel, rhs: CNCharacterCollectionViewCellViewModel) -> Bool {
-        return lhs.hashValue == rhs.hashValue
-    }
 
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(characterName)
-        hasher.combine(characterStatus)
-        hasher.combine(characterImageURL)
-
-
-    }
 
 
     // MARK: - Init
@@ -58,5 +48,17 @@ final class CNCharacterCollectionViewCellViewModel: Hashable {
         }
 
         task.resume()
+    }
+
+    // MARK: - Hashable
+
+    static func == (lhs: CNCharacterCollectionViewCellViewModel, rhs: CNCharacterCollectionViewCellViewModel) -> Bool {
+        return lhs.hashValue == rhs.hashValue
+    }
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(characterName)
+        hasher.combine(characterStatus)
+        hasher.combine(characterImageURL)
     }
 }
