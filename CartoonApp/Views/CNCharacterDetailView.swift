@@ -13,6 +13,8 @@ final class CNCharacterDetailView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .systemPurple
+        setupViewHierarchy()
+        setupViewLayout()
     }
     
     required init?(coder: NSCoder) {
@@ -20,12 +22,12 @@ final class CNCharacterDetailView: UIView {
     }
 
     private func setupViewHierarchy() {
+
     }
 
 
     private func setupViewLayout() {
         translatesAutoresizingMaskIntoConstraints = false
-
     }
     
 }
