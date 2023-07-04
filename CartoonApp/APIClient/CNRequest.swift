@@ -77,6 +77,8 @@ final class CNRequest {
         self.queryParams = queryParams
     }
 
+    /// Attempt to create request
+    /// - Parameter url: URL to parse
     convenience init?(url: URL) {
         let string = url.absoluteString
         if !string.contains(Constants.baseUrl) {
@@ -85,10 +87,19 @@ final class CNRequest {
         let trimmed = string.replacingOccurrences(of: Constants.baseUrl+"/", with: "")
         if trimmed.contains("/") {
             let components = trimmed.components(separatedBy: "/")
+//            print(trimmed, components)
             if !components.isEmpty {
-                let endpointString = components[0]
+                let endpointString = components[0] // Endpoint
+                var pathComponents: [String] = []
+//                print("components: ", components)
+                if components.count > 1 {
+                    pathComponents = components
+                    // to avoid duplicates components:  ["character", "2"] -> "2"
+                    pathComponents.removeFirst()
+                }
                 if let cnEndpoint = CNEndpoint(rawValue: endpointString) {
-                    self.init(endpoint: cnEndpoint)
+//                    print("pathComponents:", pathComponents)
+                    self.init(endpoint: cnEndpoint, pathComponents: pathComponents)
                     return
                 }
             }

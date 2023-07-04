@@ -23,7 +23,6 @@ final class CNCharacterListViewViewModel: NSObject {
     private var isLoadingMoreCharacters = false
     private var characters: [CNCharacter] = [] {
         didSet {
-            print("[CNCharacterListViewViewModel] Creating new models")
             for character in characters {
                 let viewModel = CNCharacterCollectionViewCellViewModel(
                     characterName: character.name,
@@ -50,8 +49,6 @@ final class CNCharacterListViewViewModel: NSObject {
                 DispatchQueue.main.async {
                     self?.delegate?.didLoadInitialCharacters()
                 }
-                print("Example Image Url "+String(resultModel.results.first?.image ?? "No Image") )
-
             case .failure(let error):
                 print(String(describing: error))
             }
