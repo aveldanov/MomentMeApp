@@ -63,13 +63,27 @@ final class CNCharacterDetailViewController: UIViewController {
 // MARK: - UICollectionViewDelegate
 
 extension CNCharacterDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return viewModel.sections.count
+    }
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return 3
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        cell.backgroundColor = .systemPink
+        if indexPath.section == 0 {
+            cell.backgroundColor = .systemPink
+
+        } else if indexPath.section == 1 {
+            cell.backgroundColor = .systemPurple
+
+        } else {
+            cell.backgroundColor = .systemCyan
+
+        }
         return cell
     }
 }
