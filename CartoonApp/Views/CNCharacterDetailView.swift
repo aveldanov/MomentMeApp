@@ -109,10 +109,10 @@ final class CNCharacterDetailView: UIView {
     private func createInformationSectionLayout() -> NSCollectionLayoutSection  {
         let item = NSCollectionLayoutItem(
             layoutSize: NSCollectionLayoutSize(
-                widthDimension: .fractionalWidth(1.0),
+                widthDimension: .fractionalWidth(0.5),
                 heightDimension: .fractionalHeight(1.0)))
-        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 0)
-        let group = NSCollectionLayoutGroup.vertical(
+        item.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2)
+        let group = NSCollectionLayoutGroup.horizontal(
             layoutSize: NSCollectionLayoutSize(
                 widthDimension: .fractionalWidth(1.0),
                 heightDimension: .absolute(150)),
@@ -126,13 +126,14 @@ final class CNCharacterDetailView: UIView {
             layoutSize: NSCollectionLayoutSize(
                 widthDimension: .fractionalWidth(1.0),
                 heightDimension: .fractionalHeight(1.0)))
-        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 0)
-        let group = NSCollectionLayoutGroup.vertical(
+        item.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
+        let group = NSCollectionLayoutGroup.horizontal(
             layoutSize: NSCollectionLayoutSize(
-                widthDimension: .fractionalWidth(1.0),
+                widthDimension: .fractionalWidth(0.3),
                 heightDimension: .absolute(150)),
             subitems: [item])
         let section = NSCollectionLayoutSection(group: group)
+        section.orthogonalScrollingBehavior = .continuous
         return section
     }
 }
