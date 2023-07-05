@@ -11,22 +11,38 @@ final class CNCharacterDetailViewViewModel {
     
     private let character: CNCharacter
 
-    enum SectionType: CaseIterable {
-        case photo
-        case information
-        case episodes
+    // enum and associated values
+    enum SectionType {
+        case photo(viewModel: CNCharacterPhotoCollectionViewViewModel)
+        case information(viewModels: [CNCharacterInformationCollectionViewViewModel])
+        case episodes(viewModels: [CNCharacterEpisodeCollectionViewViewModel])
     }
 
-    public let sections = SectionType.allCases
+    public var sections: [SectionType] = []
 
     // MARK: - Initilizer
 
     init(character: CNCharacter) {
         self.character = character
+        setupSections()
     }
 
     private var requestUrl: URL? {
         return URL(string: character.url)
+    }
+
+    private func setupSections() {
+        sections = [
+            .photo(viewModel: .init()),
+            .information(viewModels: [
+                .init(),
+                .init()
+            ]),
+            .episodes(viewModels: [
+                .init(),
+                .init()
+            ])
+        ]
     }
 
     public var title: String {
@@ -70,7 +86,7 @@ final class CNCharacterDetailViewViewModel {
             layoutSize: NSCollectionLayoutSize(
                 widthDimension: .fractionalWidth(1.0),
                 heightDimension: .fractionalHeight(1.0)))
-        item.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 5, bottom: 10, trailing: 8)
         let group = NSCollectionLayoutGroup.horizontal(
             layoutSize: NSCollectionLayoutSize(
                 widthDimension: .fractionalWidth(0.8),

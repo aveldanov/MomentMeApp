@@ -37,6 +37,12 @@
 		34B0E5352A49187300CBAEB4 /* CNCharacterListViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B0E5342A49187300CBAEB4 /* CNCharacterListViewViewModel.swift */; };
 		34B0E5372A49190B00CBAEB4 /* CNCharacterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B0E5362A49190B00CBAEB4 /* CNCharacterListView.swift */; };
 		34F76B552A5395FD00E83E17 /* CNImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F76B542A5395FD00E83E17 /* CNImageLoader.swift */; };
+		34F76B592A55342400E83E17 /* CNCharacterPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F76B582A55342400E83E17 /* CNCharacterPhotoCollectionViewCell.swift */; };
+		34F76B5B2A55344900E83E17 /* CNCharacterInformationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F76B5A2A55344900E83E17 /* CNCharacterInformationCollectionViewCell.swift */; };
+		34F76B5D2A55345A00E83E17 /* CNCharacterEpisodeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F76B5C2A55345A00E83E17 /* CNCharacterEpisodeCollectionViewCell.swift */; };
+		34F76B602A5534B900E83E17 /* CNCharacterPhotoCollectionViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F76B5F2A5534B900E83E17 /* CNCharacterPhotoCollectionViewViewModel.swift */; };
+		34F76B622A5534CD00E83E17 /* CNCharacterInformationCollectionViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F76B612A5534CD00E83E17 /* CNCharacterInformationCollectionViewViewModel.swift */; };
+		34F76B642A5534DB00E83E17 /* CNCharacterEpisodeCollectionViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F76B632A5534DB00E83E17 /* CNCharacterEpisodeCollectionViewViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +78,12 @@
 		34B0E5342A49187300CBAEB4 /* CNCharacterListViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNCharacterListViewViewModel.swift; sourceTree = "<group>"; };
 		34B0E5362A49190B00CBAEB4 /* CNCharacterListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNCharacterListView.swift; sourceTree = "<group>"; };
 		34F76B542A5395FD00E83E17 /* CNImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNImageLoader.swift; sourceTree = "<group>"; };
+		34F76B582A55342400E83E17 /* CNCharacterPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNCharacterPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		34F76B5A2A55344900E83E17 /* CNCharacterInformationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNCharacterInformationCollectionViewCell.swift; sourceTree = "<group>"; };
+		34F76B5C2A55345A00E83E17 /* CNCharacterEpisodeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNCharacterEpisodeCollectionViewCell.swift; sourceTree = "<group>"; };
+		34F76B5F2A5534B900E83E17 /* CNCharacterPhotoCollectionViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNCharacterPhotoCollectionViewViewModel.swift; sourceTree = "<group>"; };
+		34F76B612A5534CD00E83E17 /* CNCharacterInformationCollectionViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNCharacterInformationCollectionViewViewModel.swift; sourceTree = "<group>"; };
+		34F76B632A5534DB00E83E17 /* CNCharacterEpisodeCollectionViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNCharacterEpisodeCollectionViewViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,10 +149,9 @@
 		3457D6EC2A36B7310067D9CC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				34F76B562A5533C100E83E17 /* CharacterDetail */,
 				348ADADE2A5233A8008D65CD /* CNFooterLoadingCollectionReusableView.swift */,
-				34B0E5362A49190B00CBAEB4 /* CNCharacterListView.swift */,
-				34A99DEF2A4AA35F002B4916 /* CNCharacterCollectionViewCell.swift */,
-				348ADADA2A512EA8008D65CD /* CNCharacterDetailView.swift */,
+				34F76B572A5533EA00E83E17 /* Character */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -148,9 +159,9 @@
 		3457D6ED2A36B73A0067D9CC /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				34F76B5E2A55347C00E83E17 /* CharacterDetail */,
 				34B0E5342A49187300CBAEB4 /* CNCharacterListViewViewModel.swift */,
 				34A99DF12A4BE593002B4916 /* CNCharacterCollectionViewCellViewModel.swift */,
-				348ADADC2A512EC3008D65CD /* CNCharacterDetailViewViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -227,6 +238,37 @@
 			path = ResponseTypes;
 			sourceTree = "<group>";
 		};
+		34F76B562A5533C100E83E17 /* CharacterDetail */ = {
+			isa = PBXGroup;
+			children = (
+				348ADADA2A512EA8008D65CD /* CNCharacterDetailView.swift */,
+				34F76B582A55342400E83E17 /* CNCharacterPhotoCollectionViewCell.swift */,
+				34F76B5A2A55344900E83E17 /* CNCharacterInformationCollectionViewCell.swift */,
+				34F76B5C2A55345A00E83E17 /* CNCharacterEpisodeCollectionViewCell.swift */,
+			);
+			path = CharacterDetail;
+			sourceTree = "<group>";
+		};
+		34F76B572A5533EA00E83E17 /* Character */ = {
+			isa = PBXGroup;
+			children = (
+				34B0E5362A49190B00CBAEB4 /* CNCharacterListView.swift */,
+				34A99DEF2A4AA35F002B4916 /* CNCharacterCollectionViewCell.swift */,
+			);
+			path = Character;
+			sourceTree = "<group>";
+		};
+		34F76B5E2A55347C00E83E17 /* CharacterDetail */ = {
+			isa = PBXGroup;
+			children = (
+				348ADADC2A512EC3008D65CD /* CNCharacterDetailViewViewModel.swift */,
+				34F76B5F2A5534B900E83E17 /* CNCharacterPhotoCollectionViewViewModel.swift */,
+				34F76B612A5534CD00E83E17 /* CNCharacterInformationCollectionViewViewModel.swift */,
+				34F76B632A5534DB00E83E17 /* CNCharacterEpisodeCollectionViewViewModel.swift */,
+			);
+			path = CharacterDetail;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -300,9 +342,12 @@
 				34B0E5332A44045700CBAEB4 /* CNGetAllCharactersResponse.swift in Sources */,
 				34A99DF02A4AA35F002B4916 /* CNCharacterCollectionViewCell.swift in Sources */,
 				348ADADB2A512EA8008D65CD /* CNCharacterDetailView.swift in Sources */,
+				34F76B602A5534B900E83E17 /* CNCharacterPhotoCollectionViewViewModel.swift in Sources */,
 				34B0E5352A49187300CBAEB4 /* CNCharacterListViewViewModel.swift in Sources */,
 				346256232A3FF3A300EE09CB /* CNRequest.swift in Sources */,
 				348ADADD2A512EC3008D65CD /* CNCharacterDetailViewViewModel.swift in Sources */,
+				34F76B5B2A55344900E83E17 /* CNCharacterInformationCollectionViewCell.swift in Sources */,
+				34F76B592A55342400E83E17 /* CNCharacterPhotoCollectionViewCell.swift in Sources */,
 				3457D6DB2A36A3A80067D9CC /* CNTabBarViewController.swift in Sources */,
 				3457D6F42A36BE8A0067D9CC /* CNLocation.swift in Sources */,
 				346256252A3FF43700EE09CB /* CNEndpoint.swift in Sources */,
@@ -313,14 +358,17 @@
 				3457D6FF2A36C2850067D9CC /* CNEpisodesViewController.swift in Sources */,
 				3462562D2A3FFCD600EE09CB /* CNCharacterGender.swift in Sources */,
 				3457D6FB2A36C2680067D9CC /* CNCharactersViewController.swift in Sources */,
+				34F76B5D2A55345A00E83E17 /* CNCharacterEpisodeCollectionViewCell.swift in Sources */,
 				34A99DEE2A494EAD002B4916 /* Extensions.swift in Sources */,
 				34F76B552A5395FD00E83E17 /* CNImageLoader.swift in Sources */,
 				3457D6F82A36BEAC0067D9CC /* CNEpisode.swift in Sources */,
 				348ADAD92A512D28008D65CD /* CNCharacterDetailViewController.swift in Sources */,
 				346256292A3FFB6000EE09CB /* CNSingleLocation.swift in Sources */,
 				346256212A3FF39000EE09CB /* CNService.swift in Sources */,
+				34F76B642A5534DB00E83E17 /* CNCharacterEpisodeCollectionViewViewModel.swift in Sources */,
 				3457D6D72A36A3A80067D9CC /* AppDelegate.swift in Sources */,
 				3457D6F62A36BEA10067D9CC /* CNCharacter.swift in Sources */,
+				34F76B622A5534CD00E83E17 /* CNCharacterInformationCollectionViewViewModel.swift in Sources */,
 				346256272A3FFAC600EE09CB /* CNOrigin.swift in Sources */,
 				34A99DF22A4BE593002B4916 /* CNCharacterCollectionViewCellViewModel.swift in Sources */,
 				348ADADF2A5233A8008D65CD /* CNFooterLoadingCollectionReusableView.swift in Sources */,

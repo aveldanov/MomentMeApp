@@ -72,8 +72,13 @@ final class CNCharacterDetailView: UIView {
         let layout = UICollectionViewCompositionalLayout { sectionIndex, _ in
             return self.createSectionFor(for: sectionIndex)
         }
+
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        
+        collectionView.register(CNCharacterPhotoCollectionViewCell.self, forCellWithReuseIdentifier: CNCharacterPhotoCollectionViewCell.identifier)
+        collectionView.register(CNCharacterInformationCollectionViewCell.self, forCellWithReuseIdentifier: CNCharacterInformationCollectionViewCell.identifier)
+        collectionView.register(CNCharacterEpisodeCollectionViewCell.self, forCellWithReuseIdentifier: CNCharacterEpisodeCollectionViewCell.identifier)
+
         return collectionView
     }
 
