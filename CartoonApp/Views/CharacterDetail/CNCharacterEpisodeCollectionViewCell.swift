@@ -20,6 +20,10 @@ class CNCharacterEpisodeCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
+    override func prepareForReuse() {
+        super.prepareForReuse()
+    }
+
     private func setupViewHierarchy() {
 
     }

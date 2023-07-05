@@ -89,20 +89,23 @@ extension CNCharacterDetailViewController: UICollectionViewDelegate, UICollectio
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CNCharacterPhotoCollectionViewCell.identifier, for: indexPath) as? CNCharacterPhotoCollectionViewCell else {
                 fatalError()
             }
+            cell.configure(with: viewModel)
             cell.backgroundColor = .systemPink
 
             return cell
         case .information(let viewModels):
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CNCharacterPhotoCollectionViewCell.identifier, for: indexPath) as? CNCharacterPhotoCollectionViewCell else {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CNCharacterInformationCollectionViewCell.identifier, for: indexPath) as? CNCharacterInformationCollectionViewCell else {
                 fatalError()
             }
+            cell.configure(with: viewModels[indexPath.row])
             cell.backgroundColor = .systemYellow
 
             return cell
         case .episodes(let viewModels):
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CNCharacterPhotoCollectionViewCell.identifier, for: indexPath) as? CNCharacterPhotoCollectionViewCell else {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CNCharacterEpisodeCollectionViewCell.identifier, for: indexPath) as? CNCharacterEpisodeCollectionViewCell else {
                 fatalError()
             }
+            cell.configure(with: viewModels[indexPath.row])
             cell.backgroundColor = .systemCyan
             return cell
         }
