@@ -11,6 +11,7 @@ import UIKit
 final class CNCharacterDetailViewController: UIViewController {
 
     private let viewModel: CNCharacterDetailViewViewModel
+    
     private let detailView: CNCharacterDetailView
 
     // MARK: - Initilizer

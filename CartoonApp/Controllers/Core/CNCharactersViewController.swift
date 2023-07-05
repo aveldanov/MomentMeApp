@@ -38,6 +38,7 @@ final class CNCharactersViewController: UIViewController {
 // MARK: - CNCharacterListViewDelegate
 
 extension CNCharactersViewController: CNCharacterListViewDelegate {
+
     func cnCharacterListView(_ characterListView: CNCharacterListView, didSelectCharacter character: CNCharacter) {
         // Open detail controller for the character
         let viewModel = CNCharacterDetailViewViewModel(character: character)

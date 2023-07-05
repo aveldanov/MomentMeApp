@@ -8,6 +8,7 @@
 import Foundation
 
 final class CNImageLoader {
+    
     static let shared = CNImageLoader()
 
     private var imageDataCache = NSCache<NSString, NSData>()
@@ -39,10 +40,6 @@ final class CNImageLoader {
             self?.imageDataCache.setObject(value, forKey: key)
             completion(.success(data))
         }
-
         task.resume()
     }
-
-
-
 }

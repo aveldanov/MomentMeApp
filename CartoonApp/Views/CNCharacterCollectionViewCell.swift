@@ -48,11 +48,9 @@ class CNCharacterCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-
     private func setupViewHierarchy() {
         contentView.addSubviews(imageView, nameLabel, statusLabel)
     }
-
 
     private func setupViewLayout() {
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -75,8 +73,6 @@ class CNCharacterCollectionViewCell: UICollectionViewCell {
             imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             imageView.bottomAnchor.constraint(equalTo: nameLabel.topAnchor, constant: -3)
-
-
         ]
 
         NSLayoutConstraint.activate(constraints)
@@ -120,5 +116,4 @@ class CNCharacterCollectionViewCell: UICollectionViewCell {
             }
         }
     }
-    
 }

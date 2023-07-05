@@ -8,6 +8,7 @@
 import UIKit
 
 final class CNFooterLoadingCollectionReusableView: UICollectionReusableView {
+    
     static let identifier = "CNFooterLoadingCollectionReusableView"
 
     private let spinner: UIActivityIndicatorView = {
@@ -44,6 +45,4 @@ final class CNFooterLoadingCollectionReusableView: UICollectionReusableView {
     public func startAnimating() {
         spinner.startAnimating()
     }
-    
-
 }

@@ -15,6 +15,7 @@ protocol CNCharacterListViewDelegate: AnyObject {
 final class CNCharacterListView: UIView {
 
     private let viewModel = CNCharacterListViewViewModel()
+
     public weak var delegate: CNCharacterListViewDelegate?
 
     private let spinner: UIActivityIndicatorView = {
@@ -73,8 +74,6 @@ final class CNCharacterListView: UIView {
             collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: bottomAnchor)
-
-
         ])
     }
 
@@ -85,6 +84,7 @@ final class CNCharacterListView: UIView {
 }
 
 extension CNCharacterListView: CNCharacterListViewViewModelDelegate {
+
     func didLoadInitialCharacters() {
         spinner.stopAnimating()
         collectionView.isHidden = false
