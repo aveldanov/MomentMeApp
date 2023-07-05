@@ -8,7 +8,17 @@
 import Foundation
 
 final class CNCharacterDetailViewViewModel {
-    let character: CNCharacter
+    private let character: CNCharacter
+
+    enum SectionType: CaseIterable {
+        case photo
+        case information
+        case episodes
+    }
+
+    public let sections = SectionType.allCases
+
+    // MARK: - Initilizer
 
     init(character: CNCharacter) {
         self.character = character
