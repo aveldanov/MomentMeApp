@@ -31,7 +31,7 @@ final class CNCharacterInformationCollectionViewViewModel {
         return type.tintColor
     }
 
-    enum `Type` {
+    enum `Type`: String {
         case status
         case gender
         case type
@@ -86,22 +86,17 @@ final class CNCharacterInformationCollectionViewViewModel {
 
         var displayTitle: String {
             switch self {
-            case .status:
-                return "Something"
-            case .gender:
-                return "Something"
-            case .type:
-                return "Something"
-            case .species:
-                return "Something"
-            case .origin:
-                return "Something"
-            case .location:
-                return "Something"
-            case .created:
-                return "Something"
+            case .status,
+                    .gender,
+                    .type,
+                    .species,
+                    .origin,
+                    .location,
+                    .created:
+                return rawValue.uppercased()
+
             case .episodeCount:
-                return "Something"
+                return "EPISODE COUNT"
             }
         }
     }

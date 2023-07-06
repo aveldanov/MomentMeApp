@@ -54,8 +54,8 @@ class CNCharacterInformationCollectionViewCell: UICollectionViewCell {
         valueLabel.text = nil
         titleLabel.text = nil
         iconImageView.image = nil
-        iconImageView.tintColor = nil
-        titleLabel.textColor = nil
+        iconImageView.tintColor = .label
+        titleLabel.textColor = .label
     }
 
     private func setupViewHierarchy() {
