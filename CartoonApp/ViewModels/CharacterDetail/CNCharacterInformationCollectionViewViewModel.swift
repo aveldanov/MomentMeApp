@@ -8,7 +8,13 @@
 import Foundation
 
 final class CNCharacterInformationCollectionViewViewModel {
-    init() {
-        
+
+    public let value: String
+    public let title: String
+
+
+    init(value: String, title: String) {
+        self.value = value
+        self.title = title
     }
 }

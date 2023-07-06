@@ -12,7 +12,7 @@ struct CNCharacter: Codable {
     let name: String
     let status: CNCharacterStatus
     let species: String
-    let type: String?
+    let type: String
     let gender: CNCharacterGender
     let origin: CNOrigin
     let location: CNSingleLocation

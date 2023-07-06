@@ -13,7 +13,8 @@ class CNCharacterInformationCollectionViewCell: UICollectionViewCell {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-
+        backgroundColor = .tertiarySystemBackground
+        layer.cornerRadius = 8
     }
 
     required init?(coder: NSCoder) {
