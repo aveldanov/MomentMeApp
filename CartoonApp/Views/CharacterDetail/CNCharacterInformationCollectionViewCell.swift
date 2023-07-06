@@ -14,18 +14,22 @@ class CNCharacterInformationCollectionViewCell: UICollectionViewCell {
     private let valueLabel: UILabel = {
         let label = UILabel()
         label.text = "Earth"
+        label.font = .systemFont(ofSize: 22, weight: .light)
         return label
     }()
 
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Location"
+        label.textAlignment = .center
+        label.font = .systemFont(ofSize: 20, weight: .medium)
         return label
     }()
 
     private let iconImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(systemName: "globe.americas")
+        imageView.contentMode = .scaleAspectFit
         return imageView
     }()
 
@@ -36,9 +40,10 @@ class CNCharacterInformationCollectionViewCell: UICollectionViewCell {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .tertiarySystemBackground
+        contentView.backgroundColor = .tertiarySystemBackground
         titleContainerView.backgroundColor = .secondarySystemBackground
-        layer.cornerRadius = 8
+        contentView.layer.cornerRadius = 8
+        contentView.layer.masksToBounds = true
         setupViewHierarchy()
         setupViewLayout()
     }
@@ -69,7 +74,22 @@ class CNCharacterInformationCollectionViewCell: UICollectionViewCell {
             titleContainerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             titleContainerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             titleContainerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            titleContainerView.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.33)
+            titleContainerView.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.33),
+
+            titleLabel.leadingAnchor.constraint(equalTo: titleContainerView.leadingAnchor),
+            titleLabel.trailingAnchor.constraint(equalTo: titleContainerView.trailingAnchor),
+            titleLabel.topAnchor.constraint(equalTo: titleContainerView.topAnchor),
+            titleLabel.bottomAnchor.constraint(equalTo: titleContainerView.bottomAnchor),
+
+            iconImageView.heightAnchor.constraint(equalToConstant: 30),
+            iconImageView.widthAnchor.constraint(equalToConstant: 30),
+            iconImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 36),
+            iconImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+
+            valueLabel.leadingAnchor.constraint(equalTo: iconImageView.trailingAnchor, constant: 10),
+            valueLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
+            valueLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 36),
+            valueLabel.heightAnchor.constraint(equalToConstant: 30)
         ])
     }
 
