@@ -13,14 +13,12 @@ class CNCharacterInformationCollectionViewCell: UICollectionViewCell {
 
     private let valueLabel: UILabel = {
         let label = UILabel()
-        label.text = "Earth"
         label.font = .systemFont(ofSize: 22, weight: .light)
         return label
     }()
 
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Location"
         label.textAlignment = .center
         label.font = .systemFont(ofSize: 20, weight: .medium)
         return label
@@ -28,7 +26,6 @@ class CNCharacterInformationCollectionViewCell: UICollectionViewCell {
 
     private let iconImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(systemName: "globe.americas")
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
@@ -54,9 +51,11 @@ class CNCharacterInformationCollectionViewCell: UICollectionViewCell {
 
     override func prepareForReuse() {
         super.prepareForReuse()
-//        valueLabel.text = nil
-//        titleLabel.text = nil
-//        iconImageView.image = nil
+        valueLabel.text = nil
+        titleLabel.text = nil
+        iconImageView.image = nil
+        iconImageView.tintColor = nil
+        titleLabel.textColor = nil
     }
 
     private func setupViewHierarchy() {
@@ -93,7 +92,11 @@ class CNCharacterInformationCollectionViewCell: UICollectionViewCell {
         ])
     }
 
-    public func configure(with: CNCharacterInformationCollectionViewViewModel) {
-
+    public func configure(with viewModel: CNCharacterInformationCollectionViewViewModel) {
+        titleLabel.text = viewModel.title
+        valueLabel.text = viewModel.displayValue
+        iconImageView.image = viewModel.iconImage
+        iconImageView.tintColor = viewModel.tintColor
+        titleLabel.textColor = viewModel.tintColor
     }
 }
